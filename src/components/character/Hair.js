@@ -17,7 +17,7 @@ export class Hair extends Component {
   render() {
     return (
       <div className="hair">
-        <h4>HAIR</h4>
+      <h4>hair {this.props.state}</h4>
       </div>
     )
   }

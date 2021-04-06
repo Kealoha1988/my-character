@@ -9,11 +9,11 @@ export class Mouth extends Component {
        color: ""
     }
   }
-  
+
   render() {
     return (
       <div className="mouth">
-        <h4>MOUTH</h4>
+        <h4>mouth {this.props.state}</h4>
       </div>
     )
   }

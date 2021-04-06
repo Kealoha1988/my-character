@@ -15,17 +15,44 @@ import React, { Component } from 'react'
 
 export class Body extends Component {
 
+  
 
+  state = {
+    hair: {kind: '',
+          color: ''},
+    eye: {kind: '',
+          color: ''},
+    mouth: {kind: '',
+          color: ''},
+    shirt: {kind: '',
+          color: ''},
+    pants: {kind: '',
+          color: ''},
+    shoes: {kind: '',
+          color: ''}
+  }
+
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+  
+  handleSubmit = () => {
+    
+    this.props.setAttribute(this.state)
+  }
 
   render() {
     return (
       <div className="characterBody">
-        <Hair onChange={this.handleChange} />
-        <Eyes onChange={this.handleChange} />
-        <Mouth onChange={this.handleChange} />
-        <Shirt onChange={this.handleChange} />
-        <Pants onChange={this.handleChange} />
-        <Shoes onChange={this.handleChange} />
+        <Hair className="hair"  name="hair" hair={this.state.hair}/>
+        <Eyes onChange={this.handleChange} eyes={this.state.eyes}/>
+        <Mouth onChange={this.handleChange} mouth={this.state.mouth}/>
+        <Shirt onChange={this.handleChange} shirt={this.state.shirt}/>
+        <Pants onChange={this.handleChange} pants={this.state.pants}/>
+        <Shoes onChange={this.handleChange} shoes={this.state.shoes}/>
       </div>
     )
   }

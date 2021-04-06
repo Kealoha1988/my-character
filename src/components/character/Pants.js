@@ -17,7 +17,7 @@ export class Pants extends Component {
   render() {
     return (
       <div className="pants">
-        <h4>PANTS</h4>
+        <h4>pants {this.props.state}</h4>
       </div>
     )
   }

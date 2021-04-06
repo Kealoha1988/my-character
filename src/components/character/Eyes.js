@@ -10,19 +10,17 @@ export class Eyes extends Component {
     super(props)
   
     this.state = {
-       type: "",
+       kind: "",
        color: ""
     }
   }
 
-  chooseEyes= () => {
-    this.state = e.target.value
-  }
+
   
   render() {
     return (
       <div className="eyes">
-        <h4>EYES</h4>
+        <h4>eyes {this.props.state}</h4>
         
       </div>
     )

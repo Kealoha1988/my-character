@@ -13,11 +13,11 @@ export class Shirt extends Component {
        color: ""
     }
   }
-  
+
   render() {
     return (
       <div className="shirt">
-        <h4>SHIRT</h4>
+        <h4>shirt {this.props.state}</h4>
       </div>
     )
   }
