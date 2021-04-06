@@ -6,6 +6,19 @@
 import React, { Component } from 'react'
 
 export class Eyes extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       type: "",
+       color: ""
+    }
+  }
+
+  chooseEyes= () => {
+    this.state = e.target.value
+  }
+  
   render() {
     return (
       <div className="eyes">

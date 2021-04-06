@@ -14,15 +14,18 @@ import Shoes from './Shoes'
 import React, { Component } from 'react'
 
 export class Body extends Component {
+
+
+
   render() {
     return (
       <div className="characterBody">
-        <Hair />
-        <Eyes />
-        <Mouth />
-        <Shirt />
-        <Pants />
-        <Shoes />
+        <Hair onChange={this.handleChange} />
+        <Eyes onChange={this.handleChange} />
+        <Mouth onChange={this.handleChange} />
+        <Shirt onChange={this.handleChange} />
+        <Pants onChange={this.handleChange} />
+        <Shoes onChange={this.handleChange} />
       </div>
     )
   }
