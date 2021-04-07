@@ -2,25 +2,13 @@
 // when the user clicks on it i will render on the character
 // for now trying to make it user with words that render in app.  
 // later convert to images or svgs
-import React, { Component } from 'react'
+import React from 'react'
 
-export class Pants extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       type: "",
-       color: ""
-    }
-  }
-  
-  render() {
-    return (
-      <div className="pants">
-        <h4>pants {this.props.state}</h4>
-      </div>
-    )
-  }
+export default function Pants(props) {
+  return (
+    <div>
+      <h4 className="pants">{props.attributes[0]}</h4>
+    </div>
+  )
 }
 
-export default Pants

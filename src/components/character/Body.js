@@ -8,54 +8,17 @@ import Mouth from './Mouth'
 import Shirt from './Shirt'
 import Pants from './Pants'
 import Shoes from './Shoes'
+import React from 'react'
 
-
-
-import React, { Component } from 'react'
-
-export class Body extends Component {
-
-  
-
-  state = {
-    hair: {kind: '',
-          color: ''},
-    eye: {kind: '',
-          color: ''},
-    mouth: {kind: '',
-          color: ''},
-    shirt: {kind: '',
-          color: ''},
-    pants: {kind: '',
-          color: ''},
-    shoes: {kind: '',
-          color: ''}
-  }
-
-
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
-  
-  handleSubmit = () => {
-    
-    this.props.setAttribute(this.state)
-  }
-
-  render() {
-    return (
-      <div className="characterBody">
-        <Hair className="hair"  name="hair" hair={this.state.hair}/>
-        <Eyes onChange={this.handleChange} eyes={this.state.eyes}/>
-        <Mouth onChange={this.handleChange} mouth={this.state.mouth}/>
-        <Shirt onChange={this.handleChange} shirt={this.state.shirt}/>
-        <Pants onChange={this.handleChange} pants={this.state.pants}/>
-        <Shoes onChange={this.handleChange} shoes={this.state.shoes}/>
-      </div>
-    )
-  }
+export default function Body(props) {
+  return (
+         <div className="characterBody">
+        <Hair attributes={props.attributes.hair}/>
+        <Eyes  attributes={props.attributes.eyes}/>
+        <Mouth attributes={props.attributes.mouth}/>
+        <Shirt  attributes={props.attributes.shirt}/>
+        <Pants attributes={props.attributes.pants}/>
+        <Shoes attributes={props.attributes.shoes}/>
+        </div>
+  )
 }
-
-export default Body

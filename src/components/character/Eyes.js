@@ -3,28 +3,12 @@
 // for now trying to make it user with words that render in app.  
 // later convert to images or svgs
 
-import React, { Component } from 'react'
+import React from 'react'
 
-export class Eyes extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       kind: "",
-       color: ""
-    }
-  }
-
-
-  
-  render() {
-    return (
-      <div className="eyes">
-        <h4>eyes {this.props.state}</h4>
-        
-      </div>
-    )
-  }
+export default function Eyes(props) {
+  return (
+    <div>
+      <h4 className="eyes">{props.attributes[0]}</h4>
+    </div>
+  )
 }
-
-export default Eyes
