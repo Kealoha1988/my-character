@@ -5,9 +5,12 @@
 import React from 'react'
 
 export default function Pants(props) {
+
+  const pants = ["pants1", "pants2", "pants3", "pants4", "pants5"]
+
   return (
     <div>
-      <h4 className="pants">{props.attributes[props.index]}</h4>
+      <h4 className="pants">{pants[props.index]}</h4>
     </div>
   )
 }

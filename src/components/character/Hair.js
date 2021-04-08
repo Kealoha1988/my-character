@@ -6,9 +6,12 @@
 import React from 'react'
 
 export default function Hair(props) {
+
+const hair = ["cool hair", "sexy hair", "clean hair", "slick hair", "crazy hair"]
+
   return (
     <div>
-      <h4 className="hair">{props.attributes[props.index]}</h4>
+      <h4 className="hair">{hair[props.index]}</h4>
     </div>
   )
 }

@@ -1,4 +1,6 @@
 import CharacterCreator from './components/CharacterCreator'
+import NameForm from './components/user/NameForm'
+
 
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <div className="App">
       <center>
     <h1>Hello and welcome to my character!</h1>
+    <NameForm />
+ 
       </center>
     <CharacterCreator />
     </div>

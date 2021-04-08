@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import Body from './character/Body'
+import CharacterName from './character/CharacterName'
 
 class CharacterCreator extends Component {
 
   state = {
-    hair: ["cool hair", "sexy hair", "clean hair", "slick hair", "crazy hair"],
-    eyes: ["cool eyes", "sexy eyes", "sleepy eyes", "cute eyes", "angry eyes"],
-    mouth: ["normal mouth", "big mouth", "small mouth", "smiley mouth", "angry mouth"],
-    shirt: ["shirt1", "shirt2", "shirt3", "shirt4", "shirt5"], 
-    pants: ["pants1", "pants2", "pants3", "pants4", "pants5" ], 
-    shoes: ["shoes1", "shoes2", "shoes3", "shoes4", "shoes5"],
     hairIndex: 0,
     eyesIndex: 0,
     mouthIndex: 0,
@@ -45,7 +40,10 @@ render() {
     console.log(this.state.hairIndex)
     return (
       <div className="characterCreator">
+
+        <center>
         <div className="attributeSelector">
+          <CharacterName />
 
         <h4>hair</h4>
         <button name="hair" onClick={this.handleClickUp}>select hair</button>
@@ -53,22 +51,21 @@ render() {
         <h4>eyes</h4>
         <button name="eyes" onClick={this.handleClickUp}>select eyes</button>
 
-
         <h4>mouth</h4>
         <button name="mouth" onClick={this.handleClickUp}>select mouth</button>
-
 
         <h4>shirt</h4>
        <button name="shirt" onClick={this.handleClickUp}>select shirt</button>
 
-
         <h4>pants</h4>
         <button name="pants" onClick={this.handleClickUp}>select pants</button>
-
-
+        
         <h4>shoes</h4>
         <button name="shoes" onClick={this.handleClickUp}>select shoes</button>
+        <br></br><br></br>
         </div>
+        </center>
+
         <center>
         <Body attributes={this.state}/>
         </center>

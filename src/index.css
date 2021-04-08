@@ -41,32 +41,55 @@ code {
   margin: auto;
 }
 
+.face{
+  background-color:mintcream;
+  height: 200px;
+  width: 300px;
+  position: relative;
+}
+
+.torso{
+  background-color: olive;
+  height: 200px;
+  width: 300px;
+  position: relative;
+}
+
+.lowerHalf{
+  background-color: papayawhip;
+  height: 200px;
+  width: 300px;
+}
+
 .hair{
   position: relative;
-  top: 0px;
+ 
 }
 
 .eyes{
   position: relative;
-  top: 20px;
+  top: 25%;
+ 
 }
 
 .mouth{
   position: relative;
-  top: 30px;
+  bottom: 25%;
+
+ 
 }
 
 .shirt{
   position: relative;
-  top: 100px;
+ 
 }
 
 .pants{
   position: relative;
-  top: 200px;
+  
 }
 
 .shoes{
   position: relative;
-  top: 380px;
+  bottom: 0px;
 }

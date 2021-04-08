@@ -6,9 +6,12 @@
 import React from 'react'
 
 export default function Eyes(props) {
+
+    const eyes = ["cool eyes", "sexy eyes", "sleepy eyes", "cute eyes", "angry eyes"]
+
   return (
     <div>
-      <h4 className="eyes">{props.attributes[props.index]}</h4>
+      <h4 className="eyes">{eyes[props.index]}</h4>
     </div>
   )
 }
