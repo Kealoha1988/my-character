@@ -1,4 +1,24 @@
-export const addAttribes = (character) => ({
-  type: "ADD_TODO",
-  character
-})
+
+const baseURL = "http://localhost:3001"
+
+
+export const getCharacters = () => {
+  return dispatch => {
+    dispatch({ type: "LOADING" })
+    fetch(baseURL + "/characters")
+      .then(response => response.json())
+      .then(characters => dispatch({ type: "Show_Characters", blogs }))
+  }
+}
+
+export const getSingleCharacter = () => {
+  return dispatch => {
+    dispatch({ type: "LOADING" })
+    fetch(baseURL + "/characters" + this.id )
+    .then (respose => response.json())
+    .then( character => dispatch({ type: "SHOW_CHARACTER", character }))
+  }
+}
+
+
+

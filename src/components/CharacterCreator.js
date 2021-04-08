@@ -67,7 +67,7 @@ render() {
         </center>
 
         <center>
-        <Body attributes={this.state}/>
+        <Body attributes={this.state} />
         </center>
      
       </div>

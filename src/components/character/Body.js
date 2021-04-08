@@ -14,7 +14,7 @@ export default function Body(props) {
   return (
          <div className="characterBody">
            <div className="face">
-        <Hair index={props.attributes.hairIndex}/>
+        <Hair index={props.attributes.hairIndex} />
         <Eyes  index={props.attributes.eyesIndex}/>
         <Mouth index={props.attributes.mouthIndex}/>
           </div>
