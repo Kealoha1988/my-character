@@ -13,12 +13,12 @@ import React from 'react'
 export default function Body(props) {
   return (
          <div className="characterBody">
-        <Hair attributes={props.attributes.hair}/>
-        <Eyes  attributes={props.attributes.eyes}/>
-        <Mouth attributes={props.attributes.mouth}/>
-        <Shirt  attributes={props.attributes.shirt}/>
-        <Pants attributes={props.attributes.pants}/>
-        <Shoes attributes={props.attributes.shoes}/>
+        <Hair attributes={props.attributes.hair} index={props.attributes.hairIndex}/>
+        <Eyes  attributes={props.attributes.eyes} index={props.attributes.eyesIndex}/>
+        <Mouth attributes={props.attributes.mouth} index={props.attributes.mouthIndex}/>
+        <Shirt  attributes={props.attributes.shirt} index={props.attributes.shirtIndex}/>
+        <Pants attributes={props.attributes.pants} index={props.attributes.pantsIndex}/>
+        <Shoes attributes={props.attributes.shoes} index={props.attributes.shoesIndex}/>
         </div>
   )
 }

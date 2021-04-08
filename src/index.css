@@ -12,10 +12,33 @@ code {
     monospace;
 }
 
+.App{
+  background-color: rgb(117, 96, 133);
+}
+
+.characterCreator{
+  background-color:rgb(77, 74, 97);
+  position: relative;
+  height: 700px;
+  width:1000px;
+  margin: auto;
+
+}
+
+.attributeSelector{
+  background-color: cadetblue;
+  width: 100px;
+  position: absolute;
+
+
+}
+
 .characterBody{
+  top:0px;
   background-color: bisque;
   height: 600px;
   width: 300px;
+  margin: auto;
 }
 
 .hair{

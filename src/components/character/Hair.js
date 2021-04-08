@@ -8,7 +8,7 @@ import React from 'react'
 export default function Hair(props) {
   return (
     <div>
-      <h4 className="hair">{props.attributes[0]}</h4>
+      <h4 className="hair">{props.attributes[props.index]}</h4>
     </div>
   )
 }

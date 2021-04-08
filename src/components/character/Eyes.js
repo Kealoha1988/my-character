@@ -8,7 +8,7 @@ import React from 'react'
 export default function Eyes(props) {
   return (
     <div>
-      <h4 className="eyes">{props.attributes[0]}</h4>
+      <h4 className="eyes">{props.attributes[props.index]}</h4>
     </div>
   )
 }

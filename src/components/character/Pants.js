@@ -7,7 +7,7 @@ import React from 'react'
 export default function Pants(props) {
   return (
     <div>
-      <h4 className="pants">{props.attributes[0]}</h4>
+      <h4 className="pants">{props.attributes[props.index]}</h4>
     </div>
   )
 }
