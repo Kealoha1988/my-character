@@ -4,14 +4,15 @@
 // later convert to images or svgsre 
 
 import React from 'react'
+import hair1 from "./gifs/hair1.gif";
 
 export default function Hair(props) {
 
-const hair = ["cool hair", "sexy hair", "clean hair", "slick hair", "crazy hair"]
+const hair = [hair1, hair1, hair1, hair1, hair1]
 
   return (
     <div>
-      <h4 className="hair">{hair[props.index]}</h4>
+      <h4 className="hair"><img src={hair[props.index]}/></h4>
     </div>
   )
 }

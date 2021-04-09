@@ -30,7 +30,7 @@ code {
   text-align:center;
   transition: all 0.15s;
   background-color: rgb(122, 121, 150);
-  border-radius: 200px;
+  border-radius: 300px;
   }
 
 
@@ -40,6 +40,7 @@ code {
   height: 809px;
   width:1000px;
   margin: auto;
+  border:0.16em solid #FFFFFF;
 
 }
 
@@ -47,26 +48,32 @@ code {
   background-color: cadetblue;
   width: 180px;
   position: absolute;
+  border:0.16em solid #FFFFFF;
+  
+}
 
-
+.selectorText{
+  color: white
+  
 }
 
 .characterBody{
   top:0px;
-  background-color: bisque;
+  background-color:rgb(77, 74, 97);
   height: 800px;
   width: 500px;
   position: absolute;
-  right: 5px;
+  right: 150px;
   top: 5px;
 }
 
 .face{
-  background-color:rgb(137, 154, 174);
+  background-color:rgb(168, 155, 118);
   height: 500px;
-  width: 500px;
+  width: 400px;
   position: absolute;
   top: 0px;
+  left: 55px;
   border-radius: 200px;
 }
 
@@ -88,21 +95,23 @@ code {
 }
 
 .hair{
-  position: relative;
+  position: absolute;
+  top: -200px;
+  left: 50px;
  
 }
 
 .eyes{
   position: absolute;
   top: 20px;
-  left: 105px;
+  left: 50px;
  
 }
 
 .mouth{
   position: absolute;
-  left: 200px;
-  bottom: 50px;
+  left: 50px;
+  bottom: 10px;
 
  
 }

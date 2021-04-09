@@ -45,23 +45,23 @@ render() {
         <div className="attributeSelector">
           <CharacterName />
 
-        <h4>hair</h4>
+        <h4 className="selectorText">hair</h4>
         <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
        
-        <h4>eyes</h4>
+        <h4 className="selectorText">eyes</h4>
         <button name="eyes" onClick={this.handleClickUp} className="button">choose<br/>eyes</button>
 
-        <h4>mouth</h4>
+        <h4 className="selectorText">mouth</h4>
         <button name="mouth" onClick={this.handleClickUp} className="button">choose<br/>mouth</button>
 
-        <h4>shirt</h4>
+        <h4 className="selectorText">shirt</h4>
        <button name="shirt" onClick={this.handleClickUp} className="button">choose<br/>shirt</button>
 
-        <h4>pants</h4>
+        <h4 className="selectorText">pants</h4>
         <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
         
-        <h4>shoes</h4>
-        <button name="shoes" onClick={this.handleClickUp} className="button">choose<br/>shoes</button>
+        <h4 className="selectorText">shoes</h4>
+        <button name="shoes" onClick={this.handleClickUp} className="button">select<br/>shoes</button>
         <br></br><br></br>
         </div>
         </center>
