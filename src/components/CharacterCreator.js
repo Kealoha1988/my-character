@@ -46,22 +46,22 @@ render() {
           <CharacterName />
 
         <h4>hair</h4>
-        <button name="hair" onClick={this.handleClickUp}>select hair</button>
+        <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
        
         <h4>eyes</h4>
-        <button name="eyes" onClick={this.handleClickUp}>select eyes</button>
+        <button name="eyes" onClick={this.handleClickUp} className="button">choose<br/>eyes</button>
 
         <h4>mouth</h4>
-        <button name="mouth" onClick={this.handleClickUp}>select mouth</button>
+        <button name="mouth" onClick={this.handleClickUp} className="button">choose<br/>mouth</button>
 
         <h4>shirt</h4>
-       <button name="shirt" onClick={this.handleClickUp}>select shirt</button>
+       <button name="shirt" onClick={this.handleClickUp} className="button">choose<br/>shirt</button>
 
         <h4>pants</h4>
-        <button name="pants" onClick={this.handleClickUp}>select pants</button>
+        <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
         
         <h4>shoes</h4>
-        <button name="shoes" onClick={this.handleClickUp}>select shoes</button>
+        <button name="shoes" onClick={this.handleClickUp} className="button">choose<br/>shoes</button>
         <br></br><br></br>
         </div>
         </center>

@@ -7,7 +7,7 @@ export const getCharacters = () => {
     dispatch({ type: "LOADING" })
     fetch(baseURL + "/characters")
       .then(response => response.json())
-      .then(characters => dispatch({ type: "Show_Characters", blogs }))
+      .then(characters => dispatch({ type: "SHOW_CHARACTERS", characters }))
   }
 }
 

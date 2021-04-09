@@ -4,14 +4,21 @@
 // later convert to images or svgs
 
 import React from 'react'
+import eyes1 from "./gifs/eyes1.gif";
+import eyes2 from "./gifs/eyes2.gif";
 
-export default function Eyes(props) {
 
-    const eyes = ["cool eyes", "sexy eyes", "sleepy eyes", "cute eyes", "angry eyes"]
+class  Eyes extends React.Component {
+eyes = [eyes1, eyes2, eyes1, eyes1, eyes1]
 
+
+  render(){
   return (
     <div>
-      <h4 className="eyes">{eyes[props.index]}</h4>
+      <h4 className="eyes"><img src={this.eyes[this.props.index]}/></h4>
     </div>
   )
 }
+} 
+
+export default Eyes

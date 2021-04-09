@@ -1,11 +1,28 @@
-const initialState = {}
+const initialState = {
+     characters: [],
+     loading: true
+    }
 
-const attributeReducer = (state, action) => {
+
+const attributeReducer = (state = initialState, action) => {
   switch(action.type) {
+    case "LOADING":
+      return{
+      ...state,
+      loading: true
+      }
+      case "SHOW_CHARACTERS":
+      return{
+        ...state,
+        loading: false,
+        characters: action.characters
+      }
+
     default:
-      return state;
+    return state;
   }
 }
 
 export default attributeReducer
 
+  

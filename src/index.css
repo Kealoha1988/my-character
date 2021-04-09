@@ -16,10 +16,28 @@ code {
   background-color: rgb(117, 96, 133);
 }
 
+.button{
+  display:inline-block;
+  padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:lowercase;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.15s;
+  background-color: rgb(122, 121, 150);
+  border-radius: 200px;
+  }
+
+
 .characterCreator{
   background-color:rgb(77, 74, 97);
   position: relative;
-  height: 700px;
+  height: 809px;
   width:1000px;
   margin: auto;
 
@@ -27,7 +45,7 @@ code {
 
 .attributeSelector{
   background-color: cadetblue;
-  width: 100px;
+  width: 180px;
   position: absolute;
 
 
@@ -36,29 +54,37 @@ code {
 .characterBody{
   top:0px;
   background-color: bisque;
-  height: 600px;
-  width: 300px;
-  margin: auto;
+  height: 800px;
+  width: 500px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .face{
-  background-color:mintcream;
-  height: 200px;
-  width: 300px;
-  position: relative;
+  background-color:rgb(137, 154, 174);
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 0px;
+  border-radius: 200px;
 }
 
 .torso{
-  background-color: olive;
-  height: 200px;
-  width: 300px;
-  position: relative;
+  background-color: rgb(128, 26, 0);
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  top: 501px
+
 }
 
 .lowerHalf{
-  background-color: papayawhip;
+  background-color: rgb(111, 148, 165);
   height: 200px;
-  width: 300px;
+  width: 500px;
+  position: absolute;
+  bottom: 0px;
 }
 
 .hair{
@@ -67,14 +93,16 @@ code {
 }
 
 .eyes{
-  position: relative;
-  top: 25%;
+  position: absolute;
+  top: 20px;
+  left: 105px;
  
 }
 
 .mouth{
-  position: relative;
-  bottom: 25%;
+  position: absolute;
+  left: 200px;
+  bottom: 50px;
 
  
 }
