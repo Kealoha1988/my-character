@@ -21,7 +21,7 @@ handleClickUp = (e) => {
 
   if (this.state.hairIndex === 4){this.setState({ hairIndex: this.state.hairIndex - 4})}
   else if (this.state.eyesIndex === 4){this.setState({ eyesIndex: this.state.eyesIndex - 4})}
-  else if (this.state.mouthIndex === 4){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
+  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
   else if (this.state.shirtIndex === 4){this.setState({ shirtIndex: this.state.shirtIndex - 4})}
   else if (this.state.pantsIndex === 4){this.setState({ pantsIndex: this.state.pantsIndex - 4})}
   else if (this.state.shoesIndex === 4){this.setState({ shoesIndex: this.state.shoesIndex - 4})}
@@ -33,11 +33,12 @@ handleClickUp = (e) => {
   else if (e.target.name === "shirt"){this.setState({shirtIndex: this.state.shirtIndex + 1})}
   else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex + 1})}
   else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex + 1})}
+  console.log(this.state)
 }
 
 
 render() {
-    console.log(this.state.hairIndex)
+    console.log(this.state)
     return (
       <div className="characterCreator">
 
@@ -45,22 +46,17 @@ render() {
         <div className="attributeSelector">
           <CharacterName />
 
-        <h4 className="selectorText">hair</h4>
+       <br/><br/>
         <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
-       
-        <h4 className="selectorText">eyes</h4>
+        <br/><br/>
         <button name="eyes" onClick={this.handleClickUp} className="button">choose<br/>eyes</button>
-
-        <h4 className="selectorText">mouth</h4>
+        <br/><br/>
         <button name="mouth" onClick={this.handleClickUp} className="button">choose<br/>mouth</button>
-
-        <h4 className="selectorText">shirt</h4>
+        <br/><br/>
        <button name="shirt" onClick={this.handleClickUp} className="button">choose<br/>shirt</button>
-
-        <h4 className="selectorText">pants</h4>
+       <br/><br/>
         <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
-        
-        <h4 className="selectorText">shoes</h4>
+        <br/><br/>
         <button name="shoes" onClick={this.handleClickUp} className="button">select<br/>shoes</button>
         <br></br><br></br>
         </div>

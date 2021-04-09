@@ -7,7 +7,7 @@ import mouth5 from "./gifs/mouth5.gif";
 
 export default function Mouth(props) {
 
-  const mouth = [mouth1, mouth2, mouth3, mouth4, mouth5] 
+  const mouth = [mouth2, mouth4, mouth1, mouth3, mouth5] 
   
   return (
     <div>

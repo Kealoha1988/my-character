@@ -18,7 +18,7 @@ class NameForm extends Component {
   
   handleChange = (e) => {
     this.setState({
-      [e.target.userName]: e.target.value 
+      [e.target.name]: e.target.value 
     })
   }
   
@@ -31,9 +31,9 @@ class NameForm extends Component {
   render() {
     return (
       <div>
-        <h4>what is your name?</h4>
+        <h4 className="selectorText">what is your name?</h4>
         <form onClick={this.handleSubmit}>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
+          <input type="text" className="textBoxes" name="userName" value={this.state.name} onChange={this.handleChange}></input>
           <input type="submit"  className="button" ></input>
         </form>
       </div>

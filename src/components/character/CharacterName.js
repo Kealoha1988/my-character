@@ -6,7 +6,7 @@ class CharacterName extends Component {
     super(props)
   
     this.state = {
-       characterName: ""
+       characterName: "my character"
     }
   }
 
@@ -19,23 +19,27 @@ class CharacterName extends Component {
   
   handleChange = (e) => {
     this.setState({
-      [e.target.characterName]: e.target.value 
+      [e.target.name]: e.target.value
     })
   }
   
   handleSubmit = (e) => {
     e.preventDefault()
+    document.getElementById('h4').innerText = this.state.characterName
     console.log(this.state)
   }
+
+
 
 
   render() {
     return (
       <div>
-        <h4>name your character!!?</h4>
+        <h4 className="selectorText" id="h4">my character</h4>
         <form onClick={this.handleSubmit}>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
-          <input type="submit"  className="button" ></input>
+          <input type="text" className="textBoxes" name="characterName" value={this.state.name} onChange={this.handleChange} placeholder=""></input>
+          <br/>
+          <input type="submit"  className="button"  value="name me"></input>
         </form>
       </div>
     )

@@ -14,9 +14,9 @@ export default function Body(props) {
   return (
          <div className="characterBody">
            <div className="face">
-        <Hair index={props.attributes.hairIndex} />
-        <Eyes  index={props.attributes.eyesIndex}/>
         <Mouth index={props.attributes.mouthIndex}/>
+        <Eyes  index={props.attributes.eyesIndex}/>
+        <Hair index={props.attributes.hairIndex} />
           </div>
           <div className="torso">
         <Shirt  index={props.attributes.shirtIndex}/>

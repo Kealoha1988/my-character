@@ -1,1 +1,10 @@
-// will show the single character that the user will look at will route as show
+ import React from 'react'
+ 
+ export default function SingleCharacter() {
+   return (
+     <div>
+       <h1>hello this is only one characters</h1>
+     </div>
+   )
+ }
+ 

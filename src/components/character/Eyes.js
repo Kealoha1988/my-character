@@ -6,19 +6,18 @@
 import React from 'react'
 import eyes1 from "./gifs/eyes1.gif";
 import eyes2 from "./gifs/eyes2.gif";
+import eyes3 from "./gifs/eyes3.gif";
+import eyes4 from "./gifs/eyes4.gif";
+import eyes5 from "./gifs/eyes5.gif";
 
 
-class  Eyes extends React.Component {
-eyes = [eyes1, eyes2, eyes1, eyes1, eyes1]
+export default function Eyes(props) {
 
+    const eyes = [eyes1, eyes2, eyes3, eyes5, eyes4]
 
-  render(){
   return (
     <div>
-      <h4 className="eyes"><img src={this.eyes[this.props.index]}/></h4>
+      <h4 className="eyes"><img src={eyes[props.index]} /></h4>
     </div>
   )
 }
-} 
-
-export default Eyes

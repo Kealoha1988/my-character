@@ -2,36 +2,24 @@
 //user will be able to click on one to see it but not change it ..... hopefully
 // will route as index
 
+// import React, { Component } from 'react'
+// import attributeReducer from '../reducers/attributeReducer'
+// import { getCharacters } from '../actions/index'
+// import { connect } from 'react-redux'
+
 import React, { Component } from 'react'
-import attributeReducer from '../reducers/attributeReducer'
-import { getCharacters } from '../actions/index'
-import { connect } from 'react-redux'
 
 class AllCharacters extends Component {
-
-  componentDidMount(){
-    this.props.getCharacters()
-  }
-
-
-
   render() {
-
-    const characters = this.props.characters.map(characters, i) => <Character key={i} hairIndex={characters.hairIndex}>
-
-
     return (
       <div>
-        <h3>{  }</h3>
+        <br/>         <br/>
+        <br/>
+
+        <h1>hello this is all the characters</h1>
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    characters: state.characters
-  }
-}
-
-export default connect(mapStateToProps)(AllCharacters)
+export default AllCharacters
