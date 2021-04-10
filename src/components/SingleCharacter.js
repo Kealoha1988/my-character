@@ -15,15 +15,36 @@
 
 
    return (
-     <div>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-     <Body attributes={cool} />
-     </div>
+    <div className="characterCreator">
+
+    <center>
+    <div className="attributeSelector">
+
+      <h4>{props.name}</h4>
+      <h4>creator: {props.userName}</h4>
+
+
+    <button  className="button">hair {cool.hairIndex}</button>
+    <br/><br/>
+    <button className="button">eyes {cool.eyesIndex}</button>
+    <br/><br/>
+    <button className="button">mouth {cool.mouthIndex}</button>
+    <br/><br/>
+   <button className="button">shirt {cool.shirtIndex}</button>
+   <br/><br/>
+    <button className="button">pants {cool.pantsIndex}</button>
+    <br/><br/>
+    <button className="button">shoes {cool.shoesIndex}</button>
+    <br></br><br></br>
+    </div>
+    </center>
+
+    <center>
+    <Body attributes={cool} />
+    </center>
+ 
+  </div>
+     
    )
  }
  
