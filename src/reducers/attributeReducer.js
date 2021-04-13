@@ -1,7 +1,20 @@
 const initialState = {
-     characters: [],
-     loading: true
-    }
+  user: {
+    name: "",
+    id: ""
+  },
+  chararcter: {
+    name: "", 
+    hairIndex: "",
+    eyesIndex: "",
+    mouthIndex: "",
+    shirtIndex: "",
+    pantsIndex: "",
+    shoesIndex: "",j
+  },
+  loading: true
+}
+
 
 
 const attributeReducer = (state = initialState, action) => {
@@ -11,11 +24,7 @@ const attributeReducer = (state = initialState, action) => {
       ...state,
       loading: true
       }
-      case "SHOW_CHARACTERS":
-      return{
-        ...state,
-        loading: false,
-        characters: action.characters
+     
       }
 
     default:
