@@ -26,6 +26,7 @@ class CharacterName extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     document.getElementById('h4').innerText = this.state.characterName
+    this.setState({characterName: this.state.characterName})
     console.log(this.state)
   }
 
@@ -36,10 +37,10 @@ class CharacterName extends Component {
     return (
       <div>
         <h4 className="selectorText" id="h4">my character</h4>
-        <form onClick={this.handleSubmit}>
+        <form >
           <input type="text" className="textBoxes" name="characterName" value={this.state.name} onChange={this.handleChange} placeholder=""></input>
           <br/>
-          <input type="submit"  className="button"  value="name me"></input>
+          <input type="submit"  className="button" onClick={this.handleSubmit} value="name me"></input>
         </form>
       </div>
     )

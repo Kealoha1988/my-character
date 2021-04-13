@@ -5,7 +5,6 @@ import CharacterName from './character/CharacterName'
 class CharacterCreator extends Component {
 
   state = {
-    characterName: "my character",
     hairIndex: 0,
     eyesIndex: 0,
     mouthIndex: 0,
@@ -34,25 +33,18 @@ handleClickUp = (e) => {
   else if (e.target.name === "shirt"){this.setState({shirtIndex: this.state.shirtIndex + 1})}
   else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex + 1})}
   else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex + 1})}
+  console.log(this.state)
 }
 
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-
-    console.log(this.state)
-  }
-
-
-
 render() {
-  
+    console.log(this.state)
     return (
       <div className="characterCreator">
 
         <center>
         <div className="attributeSelector">
-          <CharacterName characterName={this.state.characterName}/>
+          <CharacterName />
 
        <br/><br/>
         <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
@@ -66,7 +58,6 @@ render() {
         <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
         <br/><br/>
         <button name="shoes" onClick={this.handleClickUp} className="button">select<br/>shoes</button>
-        <input type="submit" className="button" onClick={this.handleSubmit}></input>
         <br></br><br></br>
         </div>
         </center>
@@ -80,4 +71,4 @@ render() {
   }
 }
 
-export default CharacterCreator
+export default UserCharacter

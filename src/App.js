@@ -1,29 +1,21 @@
+import React from 'react'
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import AllCharacters from "./components/AllCharacters";
 import SingleCharacter from "./components/SingleCharacter";
 import Oops from "./Oops";
 import Nav from './Nav'
+import { mockComponent } from "react-dom/test-utils";
 
 
 
-function App() {
+class App extends React.Component {
 
-  // const clickNav = (e) => {
-  //   e.preventDefault()
-  //   if (e.target.name === "home"){
-  //    return <Redirect to={Home} />
-  //   }
-  //   else if (e.target.name === "all characters"){
-  //    return <Redirect to={AllCharacters}/>
-
-  //    console.log(e.target.name)
-  //   }
-  // }
+currentUserId = []
 
 
-
-
+  render(){
+  
   return (
     <div className="App">
       <Router>
@@ -40,6 +32,7 @@ function App() {
       </Router>
     </div>
   );
+}
 }
 
 export default App;
