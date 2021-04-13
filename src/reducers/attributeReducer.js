@@ -30,7 +30,7 @@ const attributeReducer = (state = initialState, action) => {
         return{
          ...state,
          user: {
-           name: this.state.name
+           name: this.state.name,
            id: this.state.id
          },
          loading: false
