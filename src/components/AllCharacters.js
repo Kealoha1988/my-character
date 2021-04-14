@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import SingleCharacter from './SingleCharacter'
+import SingleUser from './user/SingleUser'
 import { getUsersWithCharacters } from '../actions';
 
 class AllCharacters extends Component {
@@ -45,7 +45,7 @@ class AllCharacters extends Component {
 
   render() {
     
-    console.log(this.props.usersAndCharacters)
+  
     // const { error, isLoaded, characters } = this.state;
     // const chars = this.characters.map( (character, i) => <SingleCharacter key={i} title={ character.name } />)
 
@@ -56,7 +56,7 @@ class AllCharacters extends Component {
     //   return <div>Loading...</div>;
     // } else {
 
-      const characters = this.props.usersAndCharacters.map( (user, i) => <SingleCharacter id={i} name={user.name }/> )
+      const characters = this.props.usersAndCharacters.map( (user, i) => <SingleUser id={i} name={user.name } characters={user.characters}/> )
       return (
         <>
         <br/><br/>

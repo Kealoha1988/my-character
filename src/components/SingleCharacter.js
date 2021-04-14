@@ -15,13 +15,14 @@
 
 
    return (
-    <div className="characterCreator">
+
+     <div className="characterCreator">
 
     <center>
     <div className="attributeSelector">
 
       <h4>{props.name}</h4>
-      <h4>creator: {props.userName}</h4>
+      {/* <h4>creator: {props.characters.forEach(element => {element.name})}</h4> */}
 
 
     <button  className="button">hair {cool.hairIndex}</button>
