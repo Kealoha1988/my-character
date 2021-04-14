@@ -31,11 +31,11 @@ fetch("http://localhost:3001/users", {
 export const getUsersWithCharacters = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" })
-    fetch(baseURL + "/users")
+    fetch('http://localhost:3001/users')
       .then(resp => resp.json())
       .then(usersAndCharaters => {
-        const dispatchObj = { type: "GET_USERS_AND_CHARACTERS", payload: usersAndCharaters }
-        dispatch(dispatchObj);
+        const dispatchObject = { type: "GET_USERS_AND_CHARACTERS", payload: usersAndCharaters }
+        dispatch(dispatchObject);
       })
   }
 }

@@ -1,5 +1,5 @@
 const initialState = {
-  users: [],
+  usersAndCharacters: [],
   loading: true
 }
 
@@ -17,9 +17,9 @@ const attributeReducer = (state = initialState, action) => {
         return{
               ...state,
               loading: false,
-              users: action.payload
+              usersAndCharacters: action.payload
             }
-            
+
     default:
     return state;
   }
