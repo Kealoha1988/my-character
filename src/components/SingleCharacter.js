@@ -12,7 +12,7 @@
     shoesIndex: props.shoesIndex 
   }
 
-
+  const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes"]
 
    return (
 
@@ -21,21 +21,21 @@
     <center>
     <div className="attributeSelector">
 
-      <h4>{props.name}</h4>
+      <h4 className="selectorText">{props.name}</h4>
       {/* <h4>creator: {props.characters.forEach(element => {element.name})}</h4> */}
 
 
-    <button  className="button">hair {cool.hairIndex}</button>
+    <div  className="button">hair {cool.hairIndex}</div>
     <br/><br/>
-    <button className="button">eyes {cool.eyesIndex}</button>
+  <div className="button"><small>{eyes[cool.eyesIndex]}</small></div>
     <br/><br/>
-    <button className="button">mouth {cool.mouthIndex}</button>
+    <div className="button">mouth {cool.mouthIndex}</div>
     <br/><br/>
-   <button className="button">shirt {cool.shirtIndex}</button>
+   <div className="button">shirt {cool.shirtIndex}</div>
    <br/><br/>
-    <button className="button">pants {cool.pantsIndex}</button>
+    <div className="button">pants {cool.pantsIndex}</div>
     <br/><br/>
-    <button className="button">shoes {cool.shoesIndex}</button>
+    <div className="button">shoes {cool.shoesIndex}</div>
     <br></br><br></br>
     </div>
     </center>

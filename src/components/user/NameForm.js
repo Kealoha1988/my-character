@@ -44,11 +44,12 @@ class NameForm extends Component {
     userName: user.name,
     id: user.id
   }))
+
 }
 
 
   render() {
-    console.log(this.state)
+
     return (
       <div>
         <h4 className="selectorText">what is your name?</h4>

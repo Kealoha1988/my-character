@@ -1,16 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SingleCharacter from '../SingleCharacter'
+
 
 
 export default function SingleUser(props) {
 
-  const characters = () => props.characters.map( (char, i) => <SingleCharacter id={i} name={char.name } hairIndex={char.hairIndex} eyesIndex={char.eyesIndex} mouthIndex={char.mouthIndex} shirtIndex={char.shritIndex} pantsIndex={char.pantsIndex} shoesIndex={char.shoesIndex} /> )
+  const [hide, showCharacters] = useState(true)
+  
+
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    showCharacters(!hide)
+    if (hide){e.target.value = "see characters"}
+    else if (!hide){e.target.value = "hide character"} 
+  }
+
+
+
+  const characters = () => props.characters.map( char => <SingleCharacter key={char.id} id={char.id} name={char.name } hairIndex={char.hairIndex} eyesIndex={char.eyesIndex} mouthIndex={char.mouthIndex} shirtIndex={char.shritIndex} pantsIndex={char.pantsIndex} shoesIndex={char.shoesIndex} /> )
+
+
 
   return (
     <div>
-      <h3>{props.name}</h3>
+      <div className="singleUser-container">
+      <h3 className="selectorText" >Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value="see characters" ></input></h3>
+      </div>
+      
+  
+      {hide === true ? "" : characters()}
      
-    {characters()}
     </div>
   )
 }

@@ -9,15 +9,17 @@ import { mockComponent } from "react-dom/test-utils";
 
 
 
+
 class App extends React.Component {
 
-currentUserId = []
+currentUser = []
 
 
   render(){
   
   return (
     <div className="App">
+     
       <Router>
 
         <Nav />

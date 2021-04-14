@@ -4,16 +4,16 @@
 // later convert to images or svgs
 
 import React from 'react'
-import eyes1 from "./gifs/eyes1.gif";
-import eyes2 from "./gifs/eyes2.gif";
-import eyes3 from "./gifs/eyes3.gif";
-import eyes4 from "./gifs/eyes4.gif";
-import eyes5 from "./gifs/eyes5.gif";
+import cuteEyes from "./gifs/cuteEyes.gif";
+import evilEyes from "./gifs/evilEyes.gif";
+import shiftyEyes from "./gifs/shiftyEyes.gif";
+import dreamyEyes from "./gifs/dreamyEyes.gif";
+import winkyEyes from "./gifs/winkyEyes.gif";
 
 
 export default function Eyes(props) {
 
-    const eyes = [eyes1, eyes2, eyes3, eyes5, eyes4]
+    const eyes = [cuteEyes, evilEyes, shiftyEyes, dreamyEyes, winkyEyes]
 
   return (
     <div>
