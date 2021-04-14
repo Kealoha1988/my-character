@@ -13,7 +13,7 @@ import React from 'react'
 export default function Body(props) {
   return (
          <div className="characterBody">
-           <div className="face">
+           <div className="face" style={{backgroundColor: props.attributes.skinTone}}>
         <Mouth index={props.attributes.mouthIndex}/>
         <Eyes  index={props.attributes.eyesIndex}/>
         <Hair index={props.attributes.hairIndex} />

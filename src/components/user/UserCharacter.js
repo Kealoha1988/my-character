@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Body from './character/Body'
 import CharacterName from './character/CharacterName'
 
-class CharacterCreator extends Component {
+class UserCharacter extends Component {
 
   state = {
     hairIndex: 0,

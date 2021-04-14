@@ -6,7 +6,9 @@ class NameForm extends Component {
   
     this.state = {
        userName: "",
-       id: ""
+       id: "",
+       words: "what is your name?"
+
     }
   }
 
@@ -42,7 +44,8 @@ class NameForm extends Component {
   .then(response => response.json())
   .then(user => this.setState({
     userName: user.name,
-    id: user.id
+    id: user.id,
+    words: "creator name: " + user.name
   }))
 
 }
@@ -52,7 +55,7 @@ class NameForm extends Component {
 
     return (
       <div>
-        <h4 className="selectorText">what is your name?</h4>
+        <h4 className="selectorText">{this.state.words}</h4>
         <form onClick={this.handleSubmit}>
           <input type="text" className="textBoxes" name="userName" value={this.state.name} onChange={this.handleChange}></input>
           <input type="submit"  className="button" onClick={this.handleSubmit} ></input>

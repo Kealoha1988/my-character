@@ -230,6 +230,13 @@ code {
   border-radius: 300px;
   }
 
+  .chooseColor{
+    border-radius: 200px;
+    margin:0 0.3em 0.3em 0;
+
+  }
+
+
   .theBouncer{
     background-image: url("https://content3.jdmagicbox.com/comp/bangalore/g6/080pxx80.xx80.150203183924.r1g6/catalogue/star-bouncers-koramangala-bangalore-birthday-party-organisers-0tsuwpj6xt.jpeg");
     

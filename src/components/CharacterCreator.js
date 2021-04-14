@@ -11,7 +11,8 @@ class CharacterCreator extends Component {
     mouthIndex: 0,
     shirtIndex: 0,
     pantsIndex: 0,
-    shoesIndex: 0
+    shoesIndex: 0,
+    skinTone: ""
   }
 
 
@@ -35,6 +36,20 @@ handleClickUp = (e) => {
   else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex + 1})}
   else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex + 1})}
 }
+handleChange = (e) => {
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+}
+
+
+
+handleName = (e) => {
+  e.preventDefault()
+  document.getElementById('h4').innerText = this.state.characterName
+  this.setState({characterName: this.state.characterName})
+  console.log(this.state)
+}
 
 
   handleSubmit = (e) => {
@@ -43,16 +58,33 @@ handleClickUp = (e) => {
     console.log(this.state)
   }
 
+  changeColor = (e) => {
+    e.preventDefault()
+    this.setState({skinTone: e.target.value})
+  
+  
+  }
+
 
 
 render() {
-  
+  console.log(this.state)
     return (
       <div className="characterCreator">
 
         <center>
         <div className="attributeSelector">
-          <CharacterName characterName={this.state.characterName}/>
+         
+        <h4 className="selectorText" id="h4">my character</h4>
+        <form >
+          <input type="text" className="textBoxes" name="characterName" value={this.state.name} onChange={this.handleChange} placeholder=""></input>
+          <br/>
+          <input type="submit"  className="button" onClick={this.handleName} value="name me"></input>
+        </form>
+
+       <p style={{color: "white", fontFamily: 'Permanent Marker'}}><small>choose skin tone</small></p>
+       <input type="color" onChange={this.changeColor} className="chooseColor"></input>
+
 
        <br/><br/>
         <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
@@ -66,14 +98,17 @@ render() {
         <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
         <br/><br/>
         <button name="shoes" onClick={this.handleClickUp} className="button">select<br/>shoes</button>
-        <input type="submit" className="button" onClick={this.handleSubmit}></input>
+        <br/><br/>
+        <input type="submit" className="button" onClick={this.handleSubmit} value="save me!"></input>
         <br></br><br></br>
         </div>
         </center>
 
+
         <center>
         <Body attributes={this.state} />
         </center>
+
      
       </div>
     );

@@ -5,23 +5,28 @@ const baseURL = "http://localhost:3001"
 export const setUser = () => {
   let strongParams = {
     user: {
-        name: this.state.userName, 
+      name: this.state.userName,
     }
-}
-fetch("http://localhost:3001/users", {
+  }
+  
+  fetch("http://localhost:3001/users", {
     headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(strongParams),
     method: "POST"
-})
-.then(response => response.json())
-.then(user => this.setState({
-  userName: user.name,
-  id: user.id
-}))
+  })
+    .then(response => response.json())
+    .then(user => this.setState({
+      userName: user.name,
+      id: user.id,
+      words: "creator name: " + user.name
+    }))
 }
+
+
+
 
 
 
