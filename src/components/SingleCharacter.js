@@ -9,7 +9,8 @@
     mouthIndex: props.mouthIndex,
     shirtIndex: props.shirtIndex,
     pantsIndex: props.pantsIndex,
-    shoesIndex: props.shoesIndex 
+    shoesIndex: props.shoesIndex,
+    skinTone: props.skinTone
   }
 
   const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes"]
@@ -36,6 +37,8 @@
     <div className="button">pants {cool.pantsIndex}</div>
     <br/><br/>
     <div className="button">shoes {cool.shoesIndex}</div>
+    <br/><br/>
+    <input type="submit" className="button" style={{backgroundColor: "red"}}value="delete me"></input>
     <br></br><br></br>
     </div>
     </center>
@@ -43,6 +46,7 @@
     <center>
     <Body attributes={cool} />
     </center>
+
  
   </div>
      

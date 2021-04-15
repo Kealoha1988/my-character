@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
 import Body from './character/Body'
 import CharacterName from './character/CharacterName'
 
@@ -54,8 +54,38 @@ handleName = (e) => {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    console.log(this.state)
+    let strongParams = {
+      character: {
+          name: this.state.characterName,
+          hairIndex: this.state.hairIndex,
+          eyesIndex: this.state.eyesIndex,
+          mouthIndex: this.state.mouthIndex,
+          shirtIndex: this.state.shirtIndex,
+          pantsIndex: this.state.pantsIndex,
+          shoesIndex: this.state.shoesIndex,
+          skinTone: this.state.skinTone 
+      }
+  }
+  fetch("http://localhost:3001/characters", {
+      headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(strongParams),
+      method: "POST"
+  })
+  .then(response => response.json())
+  .then(character => this.setState({
+    characterName: character.name,
+    hairIndex: character.hairIndex,
+    eyesIndex: character.eyesIndex,
+    mouthIndex: character.mouthIndex,
+    shirtIndex: character.shirtIndex,
+    pantsIndex: character.pantsIndex,
+    shoesIndex: character.shoesIndex,
+    skinTone: character.skinTone
+    
+  }))
   }
 
   changeColor = (e) => {
