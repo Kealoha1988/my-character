@@ -49,6 +49,7 @@ code {
   text-transform:lowercase;
   font-family: 'Permanent Marker', cursive;
   font-weight:400;
+  font-size: 12px;
   color:#FFFFFF;
   text-align:center;
   transition: all 0.15s;
@@ -101,8 +102,8 @@ code {
   background-color:rgb(252, 252, 252);
   background-image: url("./components/character/gifs/stars.gif");
   position: relative;
-  height: 800px;
-  width:1000px;
+  height: 600px;
+  width:750px;
   
   margin: auto;
   border:0.16em solid #FFFFFF;
@@ -123,7 +124,8 @@ code {
 }
 
 .selectorText{
-  color: rgb(255, 255, 255)
+  color: rgb(255, 255, 255);
+  text-shadow: 1.25px 1.25px;
   
 }
 
@@ -131,8 +133,8 @@ code {
   top:0px;
   background-color:rgb(60, 60, 60);
   background-image: url("./components/character/gifs/stars.gif");
-  height: 793px;
-  width: 500px;
+  height: 580px;
+  width: 350px;
   position: absolute;
   right: 150px;
   top: 5px;
@@ -140,8 +142,8 @@ code {
 
 .face{
   background-color:rgb(123, 70, 157);
-  height: 500px;
-  width: 400px;
+  height: 350px;
+  width: 300px;
   position: absolute;
   top: 0px;
   left: 55px;
@@ -150,11 +152,11 @@ code {
 
 .torso{
   background-color: rgb(128, 26, 0);
-  height: 100px;
-  width: 300px;
+  height: 75px;
+  width: 225px;
   position: absolute;
-  left:110px;
-  top: 501px;
+  left:95px;
+  top: 352px;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
 
@@ -162,11 +164,11 @@ code {
 
 .lowerHalf{
   background-color: rgb(111, 148, 165);
-  height: 200px;
-  width: 300px;
+  height: 150px;
+  width: 225px;
   position: absolute;
   bottom: 0px;
-  left: 110px;
+  left: 95px;
 }
 
 .hair{
@@ -178,15 +180,16 @@ code {
 
 .eyes{
   position: absolute;
-  top: 20px;
-  left: 50px;
+  top: 10px;
+  left: 40px;
+  height: 225px;
  
 }
 
 .mouth{
   position: absolute;
-  left: 50px;
-  bottom: 30px;
+  left: 38px;
+  bottom: -1px;
 
  
 }

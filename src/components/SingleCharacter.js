@@ -1,5 +1,7 @@
  import React from 'react'
  import Body from "./character/Body";
+ import { Redirect } from 'react-router-dom'
+
  
  export default function SingleCharacter(props) {
 
@@ -14,6 +16,18 @@
   }
 
   const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes"]
+
+  const handleDelete = e => {
+    e.preventDefault()
+    fetch("http://localhost:3001/characters/" + `${props.id.toString()}`, {
+      method: "DELETE"
+      })
+      window.location.reload()
+  }
+
+
+
+
 
    return (
 
@@ -38,7 +52,7 @@
     <br/><br/>
     <div className="button">shoes {cool.shoesIndex}</div>
     <br/><br/>
-    <input type="submit" className="button" style={{backgroundColor: "red"}}value="delete me"></input>
+    <input type="submit" className="button" style={{backgroundColor: "red"}}value="delete me" onClick={handleDelete}></input>
     <br></br><br></br>
     </div>
     </center>

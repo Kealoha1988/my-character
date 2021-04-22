@@ -6,14 +6,17 @@ import SingleCharacter from '../SingleCharacter'
 export default function SingleUser(props) {
 
   const [hide, showCharacters] = useState(true)
+  const [text, setText] = useState("see characters")
+
+
   
 
 
   const handleClick = (e) => {
     e.preventDefault()
     showCharacters(!hide)
-    if (hide){e.target.value = "see characters"}
-    else if (!hide){e.target.value = "hide character"} 
+    if (e.target.value === "see characters"){setText("hide characters")}
+    else if (e.target.value === "hide characters"){setText("see characters")}
   }
 
 
@@ -25,7 +28,7 @@ export default function SingleUser(props) {
   return (
     <div>
       <div className="singleUser-container">
-      <h3 className="selectorText" >Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value="see characters" ></input></h3>
+      <h3 className="selectorText" >Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value={text} ></input></h3>
       </div>
       
   

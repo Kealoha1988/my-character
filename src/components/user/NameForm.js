@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+// import { setUser } from '../../actions';
 
 class NameForm extends Component {
   constructor(props) {
@@ -27,6 +29,8 @@ class NameForm extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault()
+    // this.setUser()
+    // console.log(this.state)
     // console.log(this.state.userName)
     let strongParams = {
       user: {
@@ -64,5 +68,11 @@ class NameForm extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
 
+// export default connect(mapStateToProps, { setUser })(NameForm)
 export default NameForm

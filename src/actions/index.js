@@ -5,10 +5,10 @@ const baseURL = "http://localhost:3001"
 export const setUser = () => {
   let strongParams = {
     user: {
-      name: this.state.userName,
+      name: this.state.userName
     }
   }
-  
+  return(dispatch) => {
   fetch("http://localhost:3001/users", {
     headers: {
       "Accept": "application/json",
@@ -18,11 +18,10 @@ export const setUser = () => {
     method: "POST"
   })
     .then(response => response.json())
-    .then(user => this.setState({
-      userName: user.name,
-      id: user.id,
-      words: "creator name: " + user.name
-    }))
+    .then(user => 
+      {const dispatchObject = { type: "SET_USER", payload: user }
+    dispatch(dispatchObject);
+    })}
 }
 
 
