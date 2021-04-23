@@ -56,7 +56,7 @@ class AllCharacters extends Component {
     //   return <div>Loading...</div>;
     // } else {
 
-      const characters = this.props.usersAndCharacters.map( (user, i) => <SingleUser id={i} name={user.name } characters={user.characters}/> )
+      const characters = this.props.usersAndCharacters.map( (user, i) => <SingleUser id={i} key={i} buttonFn={true} name={user.name } characters={user.characters}/> )
       return (
         <>
         <br/><br/>

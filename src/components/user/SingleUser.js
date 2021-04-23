@@ -32,7 +32,7 @@ export default function SingleUser(props) {
       </div>
       
   
-      {hide === true ? "" : characters()}
+      {props.buttonFn ? (hide === true ? "" : characters()) : characters()}
      
     </div>
   )
