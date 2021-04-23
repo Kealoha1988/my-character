@@ -19,6 +19,12 @@ const attributeReducer = (state = initialState, action) => {
           loading: false,
           user: action.payload
         }
+        case "GET_USER":
+          return{
+            ...state,
+            loading: false,
+            user: action.payload
+          }
 
       case "GET_USERS_AND_CHARACTERS":
         return{

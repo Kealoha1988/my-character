@@ -21,7 +21,7 @@ handleClickUp = (e) => {
 
   if (this.state.hairIndex === 4){this.setState({ hairIndex: this.state.hairIndex - 4})}
   else if (this.state.eyesIndex === 4){this.setState({ eyesIndex: this.state.eyesIndex - 4})}
-  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
+  else if (this.state.mouthIndex === 4){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
   else if (this.state.shirtIndex === 4){this.setState({ shirtIndex: this.state.shirtIndex - 4})}
   else if (this.state.pantsIndex === 4){this.setState({ pantsIndex: this.state.pantsIndex - 4})}
   else if (this.state.shoesIndex === 4){this.setState({ shoesIndex: this.state.shoesIndex - 4})}

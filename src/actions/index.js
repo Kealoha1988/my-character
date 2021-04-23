@@ -1,20 +1,27 @@
 
-const baseURL = "http://localhost:3001"
+const baseURL = "http://localhost:3001/"
 
 
-export const setUser = () => {
-  let strongParams = {
-    user: {
-      name: this.state.userName
-    }
-  }
+// export const getUser = () => {
+//   return (dispatch) => {
+//     dispatch({ type: "LOADING" })
+//         const dispatchObject = { type: "GET_USER", payload: user }
+//         dispatch(dispatchObject)
+//   }
+// }
+
+
+export const setUser = (userName) => {
+
+  console.log(userName)
+
   return(dispatch) => {
-  fetch("http://localhost:3001/users", {
+  fetch(baseURL + "users", {
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(strongParams),
+    body: JSON.stringify(userName),
     method: "POST"
   })
     .then(response => response.json())

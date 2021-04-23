@@ -25,13 +25,15 @@ class NameForm extends Component {
     this.setState({
       [e.target.name]: e.target.value 
     })
+
+    console.log(this.state)
   }
   
   handleSubmit = (e) => {
     e.preventDefault()
     // this.setUser()
     // console.log(this.state)
-    // console.log(this.state.userName)
+    // // console.log(this.state.userName)
     let strongParams = {
       user: {
           name: this.state.userName, 
@@ -54,6 +56,45 @@ class NameForm extends Component {
 
 }
 
+handleEdit = (e) => {
+  e.preventDefault()
+  // this.setUser()
+  // console.log(this.state)
+  // // console.log(this.state.userName)
+  let strongParams = {
+    user: {
+        name: this.state.userName, 
+    }
+}
+fetch(`http://localhost:3001/users/${this.state.id}`, {
+    headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(strongParams),
+    method: "PATCH"
+})
+.then(response => response.json())
+.then(user => this.setState({
+  userName: user.name,
+  id: user.id,
+
+}))
+}
+
+handleSignout = () => window.location.reload()
+
+
+setOrEdit = () => {
+  if (this.state.words === "creator name: can't be blank" || "what is your name?"){
+    return <input type="submit"  className="button" onClick={this.handleSubmit} value="set name"></input>
+  }
+  else {
+    return <><input type="submit" className="button" value="edit name" onClick={this.handleEdit}></input>
+    <input type="submit" className="button" value="signout" onClick={this.handleSignout}></input></>
+  }
+}
+
 
   render() {
 
@@ -62,17 +103,17 @@ class NameForm extends Component {
         <h4 className="selectorText">{this.state.words}</h4>
         <form onClick={this.handleSubmit}>
           <input type="text" className="textBoxes" name="userName" value={this.state.name} onChange={this.handleChange}></input>
-          <input type="submit"  className="button" onClick={this.handleSubmit} ></input>
+        {this.setOrEdit()}
         </form>
       </div>
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     user: state.user
+//   }
+// }
 
 // export default connect(mapStateToProps, { setUser })(NameForm)
 export default NameForm

@@ -1,4 +1,5 @@
 import React, { Component, createContext } from 'react';
+import { Redirect } from 'react-router';
 import Body from './character/Body'
 import CharacterName from './character/CharacterName'
 
@@ -12,7 +13,8 @@ class CharacterCreator extends Component {
     shirtIndex: 0,
     pantsIndex: 0,
     shoesIndex: 0,
-    skinTone: ""
+    skinTone: "",
+    redirect: false
   }
 
 
@@ -23,7 +25,7 @@ handleClickUp = (e) => {
 
   if (this.state.hairIndex === 4){this.setState({ hairIndex: this.state.hairIndex - 4})}
   else if (this.state.eyesIndex === 4){this.setState({ eyesIndex: this.state.eyesIndex - 4})}
-  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
+  else if (this.state.mouthIndex === 4){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
   else if (this.state.shirtIndex === 4){this.setState({ shirtIndex: this.state.shirtIndex - 4})}
   else if (this.state.pantsIndex === 4){this.setState({ pantsIndex: this.state.pantsIndex - 4})}
   else if (this.state.shoesIndex === 4){this.setState({ shoesIndex: this.state.shoesIndex - 4})}
@@ -83,8 +85,8 @@ handleName = (e) => {
     shirtIndex: character.shirtIndex,
     pantsIndex: character.pantsIndex,
     shoesIndex: character.shoesIndex,
-    skinTone: character.skinTone
-    
+    skinTone: character.skinTone,
+    redirect: true
   }))
   }
 
@@ -95,13 +97,22 @@ handleName = (e) => {
   
   }
 
+  makeRedirect = () => {
+    if (this.state.redirect){
+      return <Redirect to="/characters" />
+    }
+  }
+
 
 
 render() {
-  console.log(this.state)
+
     return (
+
       <div className="characterCreator">
 
+        {this.makeRedirect()}
+       
         <center>
         <div className="attributeSelector">
          
@@ -140,7 +151,6 @@ render() {
         <Body attributes={this.state} />
         </center>
 
-     
       </div>
     );
   }
