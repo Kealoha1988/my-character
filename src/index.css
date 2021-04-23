@@ -86,7 +86,8 @@ code {
   }
 
   .navButtons{
-    position: relative;
+    position: absolute;
+    top: 69px;
   }
 
   .textBoxes{

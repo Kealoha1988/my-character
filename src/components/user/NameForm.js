@@ -82,16 +82,33 @@ fetch(`http://localhost:3001/users/${this.state.id}`, {
 }))
 }
 
+
+
+handleDelete = (e) => {
+    e.preventDefault()
+    fetch(`http://localhost:3001/users/${this.state.id}`, {
+      method: "DELETE"
+      })
+      // window.location.reload()
+}
+
+
+
 handleSignout = () => window.location.reload()
 
 
+
 setOrEdit = () => {
-  if (this.state.words === "creator name: can't be blank" || "what is your name?"){
+  if (this.state.words === "creator name: can't be blank" || this.state.words === "what is your name?"){
     return <input type="submit"  className="button" onClick={this.handleSubmit} value="set name"></input>
   }
   else {
-    return <><input type="submit" className="button" value="edit name" onClick={this.handleEdit}></input>
-    <input type="submit" className="button" value="signout" onClick={this.handleSignout}></input></>
+    return <>
+    <input type="submit" className="button" value="edit name" onClick={this.handleEdit}></input>
+    <input type="submit" className="button" value="signout" onClick={this.handleSignout}></input>
+     <input type="submit" className="button" value="delete me" style={{backgroundColor: "red"}} onClick={this.handleDelete}></input>
+     </>
+
   }
 }
 

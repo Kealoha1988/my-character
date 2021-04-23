@@ -15,8 +15,8 @@ export default function SingleUser(props) {
   const handleClick = (e) => {
     e.preventDefault()
     showCharacters(!hide)
-    if (e.target.value === "see characters"){setText("hide characters")}
-    else if (e.target.value === "hide characters"){setText("see characters")}
+    if (e.target.value === "see characters"){setText(() => "hide characters")}
+    else if (e.target.value === "hide characters"){setText(() => "see characters")}
   }
 
 

@@ -2,10 +2,11 @@ import React from 'react'
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import AllCharacters from "./components/AllCharacters";
-import SingleCharacter from "./components/SingleCharacter";
+import UserCharacters from "./components/user/UserCharacters";
 import Oops from "./Oops";
 import Nav from './Nav'
-import { mockComponent } from "react-dom/test-utils";
+import { generatePath } from "react-router";
+
 
 
 
@@ -13,6 +14,10 @@ import { mockComponent } from "react-dom/test-utils";
 class App extends React.Component {
 
 currentUser = []
+
+cool = {
+  id: 2
+}
 
 
   render(){
@@ -22,12 +27,17 @@ currentUser = []
      
       <Router>
 
-        <Nav />
+        <Nav cool={this.cool.id}/>
 
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/characters" component={AllCharacters} />
-          <Route exact path="/character" component={SingleCharacter} />
+          <Route exact path={generatePath("/user/:id/characters", {
+            id: this.cool.id,
+          })} 
+          render={(props) =>(<UserCharacters cool={this.cool.id} />)}
+           />
+
           <Route component={Oops} />
         </Switch>
 

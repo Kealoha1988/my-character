@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Nav() {
+export default function Nav(props) {
+
+  const routerTrick = () => `/user/${props.cool}/characters`
+
+
   return (
     <div>
       <nav>
@@ -10,6 +14,7 @@ export default function Nav() {
           <div className="navButtons">
           <Link to='/'><button className="navButton-style">home</button></Link>
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
+          <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
           </div>
         </div>
       </nav>
