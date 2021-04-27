@@ -1,36 +1,51 @@
 const initialState = {
-  user: [],
   usersAndCharacters: [],
+  user: {
+    userName: "",
+    id: "",
+    words: "what is your name?"
+  },
   loading: true
 }
 
 
 
-const attributeReducer = (state = initialState, action) => {
+const attributeReducer = (state=initialState, action) => {
   switch(action.type) {
-    case "LOADING":
+
+      case "LOADING":
         return{
       ...state,
       loading: true
       }
+
+      case "GET_USER":
+        return{
+          ...state,
+          loading: false,
+          user:{
+            userName: "",
+            id: "",
+            words: "what is your name?"
+          }
+        }
+
       case "SET_USER":
         return{
           ...state,
           loading: false,
-          user: action.payload
+          user: {
+            userName: action.payload.name,
+            id: action.payload.id,
+            words: "creator: " + action.payload.name
+          }
         }
-        case "GET_USER":
+
+        case "GET_USERS_AND_CHARACTERS":
           return{
             ...state,
             loading: false,
-            user: action.payload
-          }
-
-      case "GET_USERS_AND_CHARACTERS":
-        return{
-              ...state,
-              loading: false,
-              usersAndCharacters: action.payload
+            usersAndCharacters: action.payload
             }
 
     default:

@@ -13,7 +13,7 @@ import { generatePath } from "react-router";
 
 class App extends React.Component {
 
-currentUser = []
+
 
 cool = {
   id: 2
@@ -21,7 +21,6 @@ cool = {
 
 
   render(){
-  
   return (
     <div className="App">
      

@@ -28,7 +28,7 @@ export default function SingleUser(props) {
   return (
     <div>
       <div className="singleUser-container">
-      <h3 className="selectorText" >Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value={text} ></input></h3>
+      <h3 className="selectorText" >Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value={props.buttonFn ? text : "your characters"} ></input></h3>
       </div>
       
   
