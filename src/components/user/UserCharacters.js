@@ -16,7 +16,7 @@ class UserCharacters extends Component {
 
   render() {
 
-      const characters = this.currentUser.map( (user, i) => <SingleUser id={i} key={i} buttonFn={false} name={user.name } characters={user.characters}/>)
+      const characters = this.currentUser.map( (user, i) => <SingleUser id={i} key={i} buttonFn={false} name={user.name } characters={user.characters} userId={this.props.cool}/>)
 
       return (
         <>

@@ -1,9 +1,10 @@
  import React from 'react'
  import Body from "./character/Body";
- import { Redirect } from 'react-router-dom'
+
 
  
  export default function SingleCharacter(props) {
+
 
   const   cool = {
     hairIndex: props.hairIndex,
@@ -15,7 +16,7 @@
     skinTone: props.skinTone
   }
 
-  const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes"]
+  const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes", "no eyes" ]
 
   const handleDelete = e => {
     e.preventDefault()
@@ -24,6 +25,9 @@
       })
       window.location.reload()
   }
+
+  const canDelete = () => props.userId ? <input type="submit" className="button" style={{backgroundColor: "red"}}value="delete me" onClick={handleDelete}></input> : ""
+  
 
 
 
@@ -37,7 +41,6 @@
     <div className="attributeSelector">
 
       <h4 className="selectorText">{props.name}</h4>
-      {/* <h4>creator: {props.characters.forEach(element => {element.name})}</h4> */}
 
 
     <div  className="button">hair {cool.hairIndex}</div>
@@ -52,7 +55,7 @@
     <br/><br/>
     <div className="button">shoes {cool.shoesIndex}</div>
     <br/><br/>
-    <input type="submit" className="button" style={{backgroundColor: "red"}}value="delete me" onClick={handleDelete}></input>
+    {canDelete()}
     <br></br><br></br>
     </div>
     </center>

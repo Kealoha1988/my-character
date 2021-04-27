@@ -16,13 +16,7 @@ import{ getUserState } from './actions'
 
 
 class App extends React.Component {
-constructor(props) {
-  super(props)
 
-  this.state = {
-     id: this.props.user.id
-  }
-}
 
 
 
@@ -47,15 +41,15 @@ componentDidMount(){
      
       <Router>
 
-        <Nav cool={this.state.id}/>
+        <Nav cool={this.props.currentUser.id}/>
 
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/characters" component={AllCharacters} />
           <Route exact path={generatePath("/user/:id/characters", {
-            id: this.state.id,
+            id: this.props.currentUser.id,
           })} 
-          render={(props) =>(<UserCharacters cool={this.state.id} />)}
+          render={(props) =>(<UserCharacters cool={this.props.currentUser.id} />)}
            />
 
           <Route component={Oops} />
@@ -70,7 +64,7 @@ componentDidMount(){
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    currentUser: state.user
   }
 }
 
