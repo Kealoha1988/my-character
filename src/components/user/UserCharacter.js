@@ -13,11 +13,12 @@ class UserCharacter extends Component {
     shoesIndex: 0
   }
 
-
+  shellDrop = new Audio('https://www.soundjay.com/button/sounds/button-7.mp3')
 
 
 handleClickUp = (e) => {
   e.preventDefault()
+  
 
   if (this.state.hairIndex === 4){this.setState({ hairIndex: this.state.hairIndex - 4})}
   else if (this.state.eyesIndex === 4){this.setState({ eyesIndex: this.state.eyesIndex - 4})}

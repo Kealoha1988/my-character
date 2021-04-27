@@ -71,7 +71,7 @@ code {
     text-align:center;
     transition: all 0.15s;
     background-color: rgb(203, 125, 23);
-    border-radius: 300px;
+    border-radius: 10px;
   }
 
 
@@ -88,6 +88,18 @@ code {
   .navButtons{
     position: absolute;
     top: 69px;
+  }
+
+  .myCharacterButton{
+    position: absolute;
+    right: 0px;
+    top: 69px
+  }
+
+  .signoutDelete{
+    position: absolute;
+    top: 130px;
+    right: 183px;
   }
 
   .textBoxes{
@@ -213,7 +225,8 @@ code {
 
 .singleUser-container{
   background-color: rgb(99, 99, 99);
-  width: 675px;
+  width: 1200px;
+  height: 36px;
 }
 
 
@@ -232,8 +245,9 @@ code {
   right: 510px;
   text-align:center;
   transition: all 0.15s;
-  background-color: rgb(194, 149, 34);
-  border-radius: 300px;
+  background-color: rgb(176, 155, 65);
+  border-radius: 10px;
+  right: 0px;
   }
 
   .chooseColor{

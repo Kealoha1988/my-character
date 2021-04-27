@@ -14,6 +14,8 @@ export default function Nav(props) {
           <div className="navButtons">
           <Link to='/'><button className="navButton-style">home</button></Link>
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
+          </div>
+          <div className="myCharacterButton">
           <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
           </div>
         </div>

@@ -2,7 +2,7 @@ const initialState = {
   usersAndCharacters: [],
   user: {
     userName: "",
-    id: "",
+    id: 1,
     words: "what is your name?"
   },
   loading: true
@@ -19,14 +19,14 @@ const attributeReducer = (state=initialState, action) => {
       loading: true
       }
 
-      case "GET_USER":
+      case "GET_CURRENT_USER":
         return{
           ...state,
           loading: false,
           user:{
-            userName: "",
-            id: "",
-            words: "what is your name?"
+            userName: action.payload.userName,
+            id: action.payload.id,
+            words: action.payload.words
           }
         }
 

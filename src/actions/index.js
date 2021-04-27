@@ -51,9 +51,7 @@ export const editUser = (userName, id ) => {
 }
 
 
-export const getInitialState = () => {
-  return dispatch => dispatch({type: "GET_USER"}) 
-}
+
 
 
 
@@ -67,6 +65,14 @@ export const getUsersWithCharacters = () => {
         dispatch(dispatchObject);
       })
   }
+}
+
+
+export const getUserState = () => {
+  return (dispatch, getState) => {
+  const dispatchObject = {type: "GET_CURRENT_USER", payload: getState().user }
+  dispatch(dispatchObject)
+}
 }
 
 

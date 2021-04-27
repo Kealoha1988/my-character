@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { setUser, editUser } from '../../actions';
+import { setUser, editUser, getUserState } from '../../actions';
 
 class NameForm extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
   
-    this.state = {
-       userName: "",
-       id: "",
-       words: "what is your name?"
-    }
+  //   this.hello = {
+  //      userName: ""
+    
+  //   }
+  // }
+
+  componentDidMount(){
+    this.props.getUserState()
   }
 
 
@@ -21,32 +24,25 @@ class NameForm extends Component {
   }
   
 
-  handleSubmit = async e => {
-    console.log("submitiing me")
+  handleSubmit = e => {
+    console.log("submiting me")
     e.preventDefault()
-    await this.props.setUser(this.state.userName)
-    this.setState({
-      userName: this.props.currentUser.userName,
-      id: this.props.currentUser.id,
-      words: "creator: " + this.props.currentUser.userName
-    })
+    this.props.setUser(document.getElementById("submitInput").value)
   }
 
-  handleEdit = async e => {
+  handleEdit = e => {
     console.log("editing me")
     e.preventDefault()
-    await this.props.editUser(this.state.userName, this.state.id)
-    this.setState({
-      userName: this.props.currentUser.userName,
-      id: this.props.currentUser.id,
-      words: "creator: " + this.props.currentUser.userName
-    })
+    // console.log(document.getElementById("editInput").value)
+    // console.log(this.props.currentUser.id)
+
+    this.props.editUser(document.getElementById("editInput").value, this.props.currentUser.id)
   }
   
   
   handleDelete = e => {
     e.preventDefault()
-    fetch(`http://localhost:3001/users/${this.state.id}`, {
+    fetch(`http://localhost:3001/users/${this.props.currentUser.id}`, {
       method: "DELETE"
       })
       window.location.reload()
@@ -58,10 +54,10 @@ handleSignout = () => window.location.reload() && console.log("im out!")
 
 
   setOrEdit = () => {
-    if (this.state.words === "creator: " || this.state.words === "what is your name?" || this.state.words === "creator: undefined") {
+    if (this.props.currentUser.words === "creator: " || this.props.currentUser.words === "what is your name?" || this.props.currentUser.words === "creator: undefined") {
       return <>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" className="textBoxes" name="userName" value={this.state.name} onChange={this.handleChange}></input>
+          <input id="submitInput" type="text" className="textBoxes" name="userName" value={this.props.currentUser.name} onChange={this.handleChange}></input>
           <input type="submit" className="button" onSubmit={this.handleSubmit} value="set name"></input>
         </form>
       </>
@@ -69,11 +65,13 @@ handleSignout = () => window.location.reload() && console.log("im out!")
     else {
       return <>
         <form onSubmit={this.handleEdit}>
-          <input type="text" className="textBoxes" name="userName" value={this.state.name} onChange={this.handleChange}></input>
+          <input id="editInput" type="text" className="textBoxes" name="userName" value={this.props.currentUser.name} onChange={this.handleChange}></input>
           <input type="submit" className="button" value="edit name" onSubmit={this.handleEdit}></input>
         </form>
+        <div className="signoutDelete">
           <input type="submit" className="button" value="signout" onClick={this.handleSignout}></input>
           <input type="submit" className="button" value="delete me" style={{ backgroundColor: "red" }} onClick={this.handleDelete}></input>
+        </div>
       </>
     }
   }
@@ -83,11 +81,11 @@ handleSignout = () => window.location.reload() && console.log("im out!")
 
   render() {
     // console.log(this.props.currentUser)
-    console.log(this.state)
+    
 
     return (
       <div>
-        <h4 className="selectorText">{this.state.words}</h4>
+        <h4 className="selectorText" value="Hello World">{this.props.currentUser.words}</h4>
         {this.setOrEdit()}
     
       </div>
@@ -98,11 +96,11 @@ handleSignout = () => window.location.reload() && console.log("im out!")
 
 
 
-const mapStateToProps = state => {
+const mapcurrentUserToProps = currentUser => {
   return {
-    currentUser: state.user
+    currentUser: currentUser.user
   }
 }
 
-export default connect(mapStateToProps, { setUser, editUser })(NameForm)
+export default connect(mapcurrentUserToProps, { getUserState, setUser, editUser })(NameForm)
 // export default NameForm
