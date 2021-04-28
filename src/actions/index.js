@@ -25,8 +25,6 @@ export const setUser = userName => {
   }
 }
 
-
-
 export const editUser = (userName, id ) => {
   const strongParams = {
     user: {
@@ -49,10 +47,6 @@ export const editUser = (userName, id ) => {
       })
   }
 }
-
-
-
-
 
 
 export const getUsersWithCharacters = () => {

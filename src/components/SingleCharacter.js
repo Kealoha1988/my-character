@@ -5,7 +5,7 @@
  
  export default function SingleCharacter(props) {
 
-  const [redirect, makeRedirect] = useState()
+  const [redirect, makeRedirect] = useState(false)
 
 
   const   cool = {

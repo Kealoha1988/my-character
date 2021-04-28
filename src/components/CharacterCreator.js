@@ -19,25 +19,28 @@ class CharacterCreator extends Component {
 
 
 
-
-handleClickUp = (e) => {
-  e.preventDefault()
-
-  if (this.state.hairIndex === 5){this.setState({ hairIndex: this.state.hairIndex - 5})}
-  else if (this.state.eyesIndex === 5){this.setState({ eyesIndex: this.state.eyesIndex - 5})}
-  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 5})}
-  else if (this.state.shirtIndex === 5){this.setState({ shirtIndex: this.state.shirtIndex - 5})}
-  else if (this.state.pantsIndex === 5){this.setState({ pantsIndex: this.state.pantsIndex - 5})}
-  else if (this.state.shoesIndex === 5){this.setState({ shoesIndex: this.state.shoesIndex - 5})}
- 
   
-  else if (e.target.name === "hair"){this.setState({hairIndex: this.state.hairIndex + 1})}
-  else if (e.target.name === "eyes"){this.setState({eyesIndex: this.state.eyesIndex + 1})}
-  else if (e.target.name === "mouth"){this.setState({mouthIndex: this.state.mouthIndex + 1})}
-  else if (e.target.name === "shirt"){this.setState({shirtIndex: this.state.shirtIndex + 1})}
-  else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex + 1})}
-  else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex + 1})}
-}
+  handleClickUp = (e) => {
+    e.preventDefault()
+    if (e.target.name === "hair"){this.setState({hairIndex: this.state.hairIndex + 1})}
+    else if (e.target.name === "eyes"){this.setState({eyesIndex: this.state.eyesIndex + 1})}
+    else if (e.target.name === "mouth"){this.setState({mouthIndex: this.state.mouthIndex + 1})}
+    else if (e.target.name === "shirt"){this.setState({shirtIndex: this.state.shirtIndex + 1})}
+    else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex + 1})}
+    else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex + 1})}
+  }
+  
+  handleClickReset = (e) => {
+  if (e.target.name === "hair"){this.setState({hairIndex: this.state.hairIndex - 4})}
+  else if (e.target.name === "eyes"){this.setState({eyesIndex: this.state.eyesIndex - 4})}
+  else if (e.target.name === "mouth"){this.setState({mouthIndex: this.state.mouthIndex - 4})}
+  else if (e.target.name === "shirt"){this.setState({shirtIndex: this.state.shirtIndex - 4})}
+  else if (e.target.name === "pants"){this.setState({pantsIndex: this.state.pantsIndex - 4})}
+  else if (e.target.name === "shoes"){this.setState({shoesIndex: this.state.shoesIndex - 4})}
+  }
+
+
+
 handleChange = (e) => {
   this.setState({
     [e.target.name]: e.target.value
@@ -131,17 +134,17 @@ render() {
 
 
        
-        <button name="hair" onClick={this.handleClickUp} className="button">choose<br/>hair</button>
+        <button name="hair" onClick={this.state.hairIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">choose<br/>hair</button>
         
-        <button name="eyes" onClick={this.handleClickUp} className="button">choose<br/>eyes</button>
+        <button name="eyes" onClick={this.state.eyesIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">choose<br/>eyes</button>
         
-        <button name="mouth" onClick={this.handleClickUp} className="button">choose<br/>mouth</button>
+        <button name="mouth" onClick={this.state.mouthIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">choose<br/>mouth</button>
         
-        <button name="shirt" onClick={this.handleClickUp} className="button">choose<br/>shirt</button>
+        <button name="shirt" onClick={this.state.shirtIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">choose<br/>shirt</button>
        
-        <button name="pants" onClick={this.handleClickUp} className="button">choose<br/>pants</button>
+        <button name="pants" onClick={this.state.pantsIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">choose<br/>pants</button>
         
-        <button name="shoes" onClick={this.handleClickUp} className="button">select<br/>shoes</button>
+        <button name="shoes" onClick={this.state.shoesIndex < 4 ? this.handleClickUp : this.handleClickReset} className="button">select<br/>shoes</button>
         
         <input type="submit" className="button" onClick={this.handleSubmit} style={{backgroundColor: "green"}}value="save me!"></input>
     
