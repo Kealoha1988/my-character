@@ -70,9 +70,9 @@ export const getUsersWithCharacters = () => {
 
 export const getUserState = () => {
   return (dispatch, getState) => {
-  const dispatchObject = {type: "GET_CURRENT_USER", payload: getState().user }
-  dispatch(dispatchObject)
-}
+    const dispatchObject = { type: "GET_CURRENT_USER", payload: getState().user }
+    dispatch(dispatchObject)
+  }
 }
 
 

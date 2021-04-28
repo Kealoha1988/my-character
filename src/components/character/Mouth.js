@@ -10,8 +10,8 @@ export default function Mouth(props) {
   const mouth = [mouth1, mouth4, mouth2, mouth3, mouth5] 
   
   return (
-    <div>
-      <h4 className="mouth"><img src={mouth[props.index]}/></h4>
+    <div className="mouth">
+    <img src={mouth[props.index]}/>
     </div>
   )
 }

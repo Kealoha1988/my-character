@@ -16,8 +16,8 @@ export default function Eyes(props) {
     const eyes = [cuteEyes, evilEyes, shiftyEyes, dreamyEyes, winkyEyes]
 
   return (
-    <div>
-      <h4 className="eyes"><img src={eyes[props.index]} /></h4>
+    <div className="eyes">
+    <img src={eyes[props.index]} />
     </div>
   )
 }

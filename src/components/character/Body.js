@@ -18,13 +18,13 @@ export default function Body(props) {
         <Eyes  index={props.attributes.eyesIndex}/>
         <Hair index={props.attributes.hairIndex} />
           </div>
-          <div className="torso">
+          {/* <div className="torso"> */}
+          {/* </div> */}
+          {/* <div className="lowerHalf"> */}
         <Shirt  index={props.attributes.shirtIndex}/>
-          </div>
-          <div className="lowerHalf">
         <Pants index={props.attributes.pantsIndex}/>
         <Shoes index={props.attributes.shoesIndex}/>
-          </div>
+          {/* </div> */}
         </div>
   )
 }
