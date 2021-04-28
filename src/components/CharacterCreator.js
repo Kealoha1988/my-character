@@ -23,12 +23,12 @@ class CharacterCreator extends Component {
 handleClickUp = (e) => {
   e.preventDefault()
 
-  if (this.state.hairIndex === 5){this.setState({ hairIndex: this.state.hairIndex - 4})}
-  else if (this.state.eyesIndex === 5){this.setState({ eyesIndex: this.state.eyesIndex - 4})}
-  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 4})}
-  else if (this.state.shirtIndex === 5){this.setState({ shirtIndex: this.state.shirtIndex - 4})}
-  else if (this.state.pantsIndex === 5){this.setState({ pantsIndex: this.state.pantsIndex - 4})}
-  else if (this.state.shoesIndex === 5){this.setState({ shoesIndex: this.state.shoesIndex - 4})}
+  if (this.state.hairIndex === 5){this.setState({ hairIndex: this.state.hairIndex - 5})}
+  else if (this.state.eyesIndex === 5){this.setState({ eyesIndex: this.state.eyesIndex - 5})}
+  else if (this.state.mouthIndex === 5){this.setState({ mouthIndex: this.state.mouthIndex - 5})}
+  else if (this.state.shirtIndex === 5){this.setState({ shirtIndex: this.state.shirtIndex - 5})}
+  else if (this.state.pantsIndex === 5){this.setState({ pantsIndex: this.state.pantsIndex - 5})}
+  else if (this.state.shoesIndex === 5){this.setState({ shoesIndex: this.state.shoesIndex - 5})}
  
   
   else if (e.target.name === "hair"){this.setState({hairIndex: this.state.hairIndex + 1})}
@@ -106,6 +106,8 @@ handleName = (e) => {
 
 
 render() {
+
+  console.log(this.state)
 
     return (
 

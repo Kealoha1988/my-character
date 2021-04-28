@@ -21,7 +21,7 @@ export default function SingleUser(props) {
 
 
 
-  const characters = () => props.characters.map( char => <SingleCharacter key={char.id} id={char.id} name={char.name } userId={props.userId} hairIndex={char.hairIndex} eyesIndex={char.eyesIndex} mouthIndex={char.mouthIndex} shirtIndex={char.shritIndex} pantsIndex={char.pantsIndex} shoesIndex={char.shoesIndex} skinTone={char.skinTone} /> )
+  const characters = () => props.characters.map( char => <SingleCharacter key={char.id} id={char.id} name={char.name } userId={props.userId} hairIndex={char.hairIndex} eyesIndex={char.eyesIndex} mouthIndex={char.mouthIndex} shirtIndex={char.shirtIndex} pantsIndex={char.pantsIndex} shoesIndex={char.shoesIndex} skinTone={char.skinTone} /> )
 
 
 

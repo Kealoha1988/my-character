@@ -154,7 +154,7 @@ code {
 }
 
 .face{
-  background-color:rgb(123, 70, 157);
+  background-color:rgb(219, 255, 225);
   height: 350px;
   width: 300px;
   position: absolute;
@@ -221,8 +221,9 @@ code {
 }
 
 .shoes{
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  bottom: -15px;
+  left: 105px
 }
 
 
