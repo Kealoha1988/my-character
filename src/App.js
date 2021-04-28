@@ -34,6 +34,7 @@ componentDidMount(){
 // }
 
 
+
   render(){
     // console.log(this.props.user.id)
   return (

@@ -21,7 +21,7 @@
   const eyes = ["cute eyes", "evil eyes", "shifty eyes", "dreamy eyes", "winky eyes", "none" ]
   const hair = ["dapper hair", "flat hair", "blonde hair", "purple hair", "bald head", "none"]
   const mouth = ["vampire teeth", "sultry lips", "smiley mouth", "happy mouth", "blue steel", "none"]
-  const shirt = ["salmon turtleneck", " white hoodie", "white turtleneck", "black turtleneck", "blue turtleneck", "none"]
+  const shirt = ["white hoodie", "grey hoodie","white turtleneck", "black turtleneck", "blue turtleneck", "none"]
   const pants = ["black jeans", "grey jeans", "white jeans", "blue jeans", "ox blood jeans"]
   const shoes = ["white shoes", "black shoes", "red shoes", "neon shoes", "purple shoes", "none"]
 

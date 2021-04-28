@@ -5,6 +5,14 @@ export default function Nav(props) {
 
   const routerTrick = () => `/user/${props.cool}/characters`
 
+  const userSignedIn = () => {
+    if (props.cool !== "noUser"){
+      return <>
+      <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
+      </>
+    }
+  }
+
 
   return (
     <div>
@@ -16,7 +24,7 @@ export default function Nav(props) {
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
           </div>
           <div className="myCharacterButton">
-          <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
+          {userSignedIn()}
           </div>
         </div>
       </nav>

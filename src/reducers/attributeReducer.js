@@ -2,7 +2,7 @@ const initialState = {
   usersAndCharacters: [],
   user: {
     userName: "",
-    id: 100000,
+    id: "noUser",
     words: "what is your name?"
   },
   loading: true
