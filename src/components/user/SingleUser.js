@@ -7,9 +7,8 @@ export default function SingleUser(props) {
 
   const [hide, showCharacters] = useState(true)
   const [text, setText] = useState("see characters")
+ 
 
-
-  
 
 
   const handleClick = (e) => {
@@ -28,7 +27,7 @@ export default function SingleUser(props) {
   return (
     <div>
       <div className="singleUser-container">
-      <h3 className="selectorText">Creator: {props.name}   <input type="submit" id="thing" className="userDiv" onClick={handleClick} value={props.buttonFn ? text : "your characters"} ></input></h3>
+      <h3 className="selectorText">Creator: {props.name} <input type="submit" id="thing" className="userDiv" onClick={handleClick} value={props.buttonFn ? text : "your characters"} ></input></h3>
       </div>
       
   

@@ -8,7 +8,7 @@
   const [redirect, makeRedirect] = useState(false)
 
 
-  const   cool = {
+  const   attributes = {
     hairIndex: props.hairIndex,
     eyesIndex: props.eyesIndex,
     mouthIndex: props.mouthIndex,
@@ -59,17 +59,17 @@
       <h4 className="selectorText">{props.name}</h4>
 
 
-    <div  className="button"><small>{hair[cool.hairIndex]}</small></div>
+    <div  className="button"><small>{hair[attributes.hairIndex]}</small></div>
     <br/><br/>
-  <div className="button"><small>{eyes[cool.eyesIndex]}</small></div>
+  <div className="button"><small>{eyes[attributes.eyesIndex]}</small></div>
     <br/><br/>
-    <div className="button"><small>{mouth[cool.mouthIndex]}</small></div>
+    <div className="button"><small>{mouth[attributes.mouthIndex]}</small></div>
     <br/><br/>
-   <div className="button"><small>{shirt[cool.shirtIndex]}</small></div>
+   <div className="button"><small>{shirt[attributes.shirtIndex]}</small></div>
    <br/><br/>
-    <div className="button"><small>{pants[cool.pantsIndex]}</small></div>
+    <div className="button"><small>{pants[attributes.pantsIndex]}</small></div>
     <br/><br/>
-    <div className="button"><small>{shoes[cool.shoesIndex]}</small></div>
+    <div className="button"><small>{shoes[attributes.shoesIndex]}</small></div>
     <br/><br/>
     {canDelete()}
     <br></br><br></br>
@@ -79,7 +79,7 @@
     {ifRedirect()}
 
     <center>
-    <Body attributes={cool} />
+    <Body attributes={props} />
     </center>
 
  

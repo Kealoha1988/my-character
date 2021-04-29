@@ -18,7 +18,7 @@ export default function Nav(props) {
     <div>
       <nav>
         <div className="navBar">
-          <center><h1 className="selectorText">my character</h1></center>
+          <center><h1 className="selectorText">my character</h1></center> 
           <div className="navButtons">
           <Link to='/'><button className="navButton-style">home</button></Link>
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
