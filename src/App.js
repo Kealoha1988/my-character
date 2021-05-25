@@ -8,6 +8,7 @@ import Nav from './Nav'
 import { generatePath } from "react-router"
 import { connect } from 'react-redux'
 import{ getUserState } from './actions'
+import Messages from './components/user/Messages'
 
 
 
@@ -31,10 +32,11 @@ componentDidMount(){
         <Switch>
           <Route exact path="/" component={Home} /> 
           <Route exact path="/characters" component={AllCharacters} />
+          <Route exact path="/messages" component={Messages} />
           <Route exact path={generatePath("/user/:id/characters", {
             id: this.props.currentUser.id,
           })} 
-          render={(props) =>(<UserCharacters cool={this.props.currentUser.id} />)}
+          render={() =>(<UserCharacters cool={this.props.currentUser.id} />)}
            />
 
           <Route component={Oops} />
