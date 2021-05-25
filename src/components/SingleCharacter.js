@@ -6,6 +6,7 @@
  export default function SingleCharacter(props) {
 
   const [redirect, makeRedirect] = useState(false)
+  const [number, setNumber] = useState(0)
 
 
   const   attributes = {
@@ -71,6 +72,8 @@
     <br/><br/>
     <div className="button"><small>{shoes[attributes.shoesIndex]}</small></div>
     <br/><br/>
+      <button className="button" style={{backgroundColor: "white", color: "purple"}}onClick={()=>setNumber(number + 1)}>likes {number} </button>
+
     {canDelete()}
     <br></br><br></br>
     </div>

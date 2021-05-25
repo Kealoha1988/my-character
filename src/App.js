@@ -11,28 +11,12 @@ import{ getUserState } from './actions'
 
 
 
-
-
-
-
 class App extends React.Component {
 
 
-
-
-// cool = {
-//   id: t
-// }
 componentDidMount(){
   this.props.getUserState()
 }
-
-// componentDidUpdate(prevProps){
-//   if ( prevProps !== this.props.user.id){
-//     return this.setState(() => this.props.user.id)
-//   }
-// }
-
 
 
   render(){
@@ -45,7 +29,7 @@ componentDidMount(){
         <Nav cool={this.props.currentUser.id}/>
 
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} /> 
           <Route exact path="/characters" component={AllCharacters} />
           <Route exact path={generatePath("/user/:id/characters", {
             id: this.props.currentUser.id,
