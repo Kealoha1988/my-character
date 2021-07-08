@@ -6,7 +6,7 @@
  export default function SingleCharacter(props) {
 
   const [redirect, makeRedirect] = useState(false)
-  const [number, setNumber] = useState(0)
+  const [number, setNumber] = useState(props.likes)
 
 
   const   attributes = {
