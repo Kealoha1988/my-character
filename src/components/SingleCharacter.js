@@ -7,6 +7,7 @@
 
   const [redirect, makeRedirect] = useState(false)
   const [number, setNumber] = useState(props.likes)
+  const [liked, setLiked] = useState(false)
 
 
   const   attributes = {
@@ -43,7 +44,39 @@
       return <Redirect to="/" />
     }
   }
-  
+
+
+  const sendLikes = () => {
+    let strongParams = {
+        character: {
+            likes: number + 1, 
+        }
+    }
+    fetch(`http://localhost:3001/characters/${props.id}`, {
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(strongParams),
+        method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(data => data)
+  }
+
+  const likeButton = () => {
+    if (liked == false){
+      return <button className="button" style={{backgroundColor: "white", color: "purple"}}onClick={handleLikes} >likes {number} </button>
+    }else{
+      return <button className="button" style={{backgroundColor: "white", color: "purple"}}>liked {number} </button>
+    }
+  }
+
+  const handleLikes = () => {
+    setNumber(number + 1)
+    setLiked(true)
+    sendLikes()
+  }
 
 
 
@@ -72,7 +105,8 @@
     <br/><br/>
     <div className="button"><small>{shoes[attributes.shoesIndex]}</small></div>
     <br/><br/>
-      <button className="button" style={{backgroundColor: "white", color: "purple"}}onClick={()=>setNumber(number + 1)}>likes {number} </button>
+    
+     {likeButton()}
 
     {canDelete()}
     <br></br><br></br>
