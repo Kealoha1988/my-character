@@ -45,24 +45,24 @@
     }
   }
 
-
-  const sendLikes = () => {
-    let strongParams = {
-        character: {
-            likes: number + 1, 
-        }
-    }
-    fetch(`http://localhost:3001/characters/${props.id}`, {
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(strongParams),
-        method: "PATCH"
-    })
-    .then(response => response.json())
-    .then(data => data)
+  const sendLikes = async function(){
+    const strongParams = {
+      character: {
+          likes: number + 1, 
+      }
   }
+    const fetchLikes = await fetch(`http://localhost:3001/characters/${props.id}`, {
+      headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(strongParams),
+      method: "PATCH"
+  })
+    const resp = fetchLikes.json()
+    return resp
+  }
+
 
   const likeButton = () => {
     if (liked == false){
@@ -105,7 +105,7 @@
     <br/><br/>
     <div className="button"><small>{shoes[attributes.shoesIndex]}</small></div>
     <br/><br/>
-    
+
      {likeButton()}
 
     {canDelete()}
