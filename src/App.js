@@ -8,7 +8,7 @@ import Nav from './Nav'
 import { generatePath } from "react-router"
 import { connect } from 'react-redux'
 import{ getUserState } from './actions'
-import Messages from './components/user/Messages'
+import Messages from '/Users/kealohaabe/Development/code/Projects/my-character/src/messages/Messages.js'
 
 
 
