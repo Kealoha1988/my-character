@@ -11,14 +11,17 @@ export class Messages extends Component {
       }
 
   render() {
+
+    const allMessages = () => this.props.messages.map( (m, i) => <MessageTemplate id={i} key={i} content={m.content } creator={m.user.name}/> )
+
     return (
       <div>
               <center>
       <h4 className="selectorText" id="h4">messages</h4>
-      <MessageTemplate/>
-      <br/>
-      <MessageBox/>
       </center>
+      {allMessages()}
+      <br />
+      <MessageBox />
         
       </div>
     )
