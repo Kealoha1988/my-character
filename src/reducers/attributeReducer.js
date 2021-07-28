@@ -5,6 +5,7 @@ const initialState = {
     id: "noUser",
     words: "what is your name?"
   },
+  messages: [],
   loading: true
 }
 
@@ -47,6 +48,13 @@ const attributeReducer = (state=initialState, action) => {
             loading: false,
             usersAndCharacters: action.payload
             }
+
+        case "GET_MESSAGES":
+          return{
+            ...state,
+            loading: false,
+            messages: action.payload
+          }
 
     default:
     return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import SingleUser from './user/SingleUser'
-import { getUsersWithCharacters } from '../actions';
+import { getUsersWithCharacters } from '../actions'
 
 class AllCharacters extends Component {
 

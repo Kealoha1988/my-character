@@ -1,22 +1,34 @@
-import React from 'react'
+import React, { Component } from 'react'
 import MessageBox from './MessageBox'
+import MessageTemplate from './MessageTemplate'
+import { connect } from 'react-redux'
+import {getMessages} from '../actions'
 
+export class Messages extends Component {
 
-export default function Messages(props) {
+  componentDidMount() {  
+    this.props.getMessages()
+      }
 
-
-
-
-  return (
-    <div>
-      <center>
+  render() {
+    return (
+      <div>
+              <center>
       <h4 className="selectorText" id="h4">messages</h4>
-      <div className="singleUser-container">
-      <h3 className="selectorText">Creator: {props.currentUser} says: there will be messages here</h3>
-      </div>
+      <MessageTemplate/>
       <br/>
       <MessageBox/>
       </center>
-    </div>
-  )
+        
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = state => {
+  return {
+    messages: state.messages
+  }
+}
+
+export default connect(mapStateToProps, { getMessages })(Messages)

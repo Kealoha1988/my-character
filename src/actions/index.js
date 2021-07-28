@@ -2,41 +2,6 @@
 const baseURL = "http://localhost:3001/"
 
 
-
-
-// export const setUser = async (userName) => {
-//   const strongParams = {
-//     user: {
-//       name: userName,
-//     }
-//   }
-//   const headers = {headers: {
-//     "Accept": "application/json",
-//     "Content-Type": "application/json"
-//   },
-//   body: JSON.stringify(strongParams),
-//   method: "POST"
-//   }
-//   const result = await function(dispatch){
-//     fetch(baseURL + "users", {
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(strongParams),
-//       method: "POST"
-//     })
-//       .then(response => response.json())
-//       .then(user => {
-//         const dispatchObject = { type: "SET_USER", payload: user }
-//         dispatch(dispatchObject);
-//       })
-//   }
-
-//   return result
-// }
-
-
 export const setUser = userName => {
   const strongParams = {
     user: {
@@ -96,6 +61,17 @@ export const getUsersWithCharacters = () => {
   }
 }
 
+export const getMessages = () => {
+  return dispatch => {
+    dispatch({ type: "LOADING" })
+    fetch(baseURL + 'messages')
+      .then(resp => resp.json())
+      .then(messages => {
+        const dispatchObject = { type: "GET_MESSAGES", payload: messages }
+        dispatch(dispatchObject);
+      })
+  }
+}
 
 export const getUserState = () => {
   return (dispatch, getState) => {
