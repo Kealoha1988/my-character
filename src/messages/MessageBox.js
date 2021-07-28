@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MessageForm() {
+export default function MessageBox() {
   return (
     <div>
       
