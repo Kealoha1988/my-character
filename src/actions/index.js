@@ -73,6 +73,30 @@ export const getMessages = () => {
   }
 }
 
+export const setMessage = (messageContent) => {
+  const strongParams = {
+    message: {
+      content: messageContent,
+    }
+  }
+  return dispatch => {
+    fetch(baseURL + "messages", {
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(strongParams),
+      method: "POST"
+    })
+      .then(response => response.json())
+      .then(message => {
+        const dispatchObject = { type: "SET_MESSAGE", payload: message }
+        dispatch(dispatchObject);
+      })
+  }
+}
+
+
 export const getUserState = () => {
   return (dispatch, getState) => {
     const dispatchObject = { type: "GET_CURRENT_USER", payload: getState().user }

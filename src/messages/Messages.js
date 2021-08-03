@@ -4,6 +4,7 @@ import MessageTemplate from './MessageTemplate'
 import { connect } from 'react-redux'
 import {getMessages} from '../actions'
 
+
 export class Messages extends Component {
 
   componentDidMount() {  
@@ -22,7 +23,6 @@ export class Messages extends Component {
       {allMessages()}
       <br />
       <MessageBox />
-        
       </div>
     )
   }

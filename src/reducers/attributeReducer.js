@@ -6,6 +6,7 @@ const initialState = {
     words: "what is your name?"
   },
   messages: [],
+  message: "",
   loading: true
 }
 
