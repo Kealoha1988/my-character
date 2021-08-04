@@ -33,7 +33,7 @@ componentDidMount(){
           <Route exact path="/" component={Home} /> 
           <Route exact path="/characters" component={AllCharacters} />
           <Route exact path={generatePath("/messages")}
-            render={() =>(<Messages currentUser={this.props.currentUser.id}/>)}/>
+            render={() =>(<Messages userId={this.props.currentUser.id}/>)}/>
           <Route exact path={generatePath("/user/:id/characters", {
             id: this.props.currentUser.id,
           })} 
