@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import MessageBox from './MessageBox'
 import MessageTemplate from './MessageTemplate'
 import { connect } from 'react-redux'
 import {getMessages} from '../actions'
@@ -39,7 +38,10 @@ export class Messages extends Component {
           body: JSON.stringify(strongParams),
           method: "POST"
         })
- 
+
+        this.props.getMessages()
+        this.setState({text: ""})
+        
         if (!resp.ok) {
           throw new Error(`HTTP error! status: ${resp.status}`)
         }
