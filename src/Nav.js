@@ -9,7 +9,7 @@ export default function Nav(props) {
     if (props.cool !== "noUser"){
       return <>
       <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
-      <Link to='/messages'><button className="navButton-style">messages</button></Link>
+      <Link to='/messages'><button className="navButton-style">message feed</button></Link>
       </>
     }
   }

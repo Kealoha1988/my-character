@@ -22,7 +22,8 @@ export class Messages extends Component {
 
     const handleChange = (e) => this.setState({text: e.target.value})
 
-    const setMessage = async (text) => {
+    const setMessage = async (e) => {
+      e.preventDefault()
       const strongParams = {
         message: {
           content: this.state.text,
@@ -41,7 +42,7 @@ export class Messages extends Component {
 
         this.props.getMessages()
         this.setState({text: ""})
-        
+
         if (!resp.ok) {
           throw new Error(`HTTP error! status: ${resp.status}`)
         }
@@ -51,18 +52,24 @@ export class Messages extends Component {
       }
     }
 
+
+
     return (
       <div>
               <center>
-      <h4 className="selectorText" id="h4">messages</h4>
+                <br/>
+                <br/>
+      {/* <h4 className="selectorText" id="h4">message feed</h4> */}
       </center>
       {allMessages()}
       <br />
 
       <div>
       <h3 style={{color: 'pink'}}>{this.state.text}</h3>
+      <form onSubmit={setMessage}>
         <input type="text" value={this.state.text} onChange={handleChange}></input>
-        <button className="button" onClick={() => setMessage(this.state.text)}>send message</button>
+        <button type="submit" className="button" onClick={setMessage}>send message</button>
+      </form>
     </div>
 
       </div>
