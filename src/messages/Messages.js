@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import MessageBox from './MessageBox'
 import MessageTemplate from './MessageTemplate'
 import { connect } from 'react-redux'
-import {getMessages} from '../actions'
+import {getMessages, setMessage} from '../actions'
+
 
 
 export class Messages extends Component {
@@ -13,6 +14,8 @@ export class Messages extends Component {
 
   render() {
 
+    const handleSubmit = (text) => setMessage(text)
+
     const allMessages = () => this.props.messages.map( (m, i) => <MessageTemplate id={i} key={i} content={m.content } creator={m.user.name}/> )
 
     return (
@@ -22,7 +25,7 @@ export class Messages extends Component {
       </center>
       {allMessages()}
       <br />
-      <MessageBox />
+      <MessageBox setMessage={handleSubmit} userId={this.props.currentUser}/>
       </div>
     )
   }

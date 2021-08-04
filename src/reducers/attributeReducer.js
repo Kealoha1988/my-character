@@ -57,6 +57,13 @@ const attributeReducer = (state=initialState, action) => {
             messages: action.payload
           }
 
+        case "SET_MESSAGE":
+          return{
+          ...state,
+          loading: false,
+          message: action.payload
+        }
+
     default:
     return state;
   }
