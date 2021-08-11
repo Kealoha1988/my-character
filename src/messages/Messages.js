@@ -22,8 +22,19 @@ export class Messages extends Component {
 
     const handleChange = (e) => this.setState({text: e.target.value})
 
-    const setMessage = async (e) => {
+    const approveMessage = (e) => {
       e.preventDefault()
+      console.log(this.state.text.length)
+      if (this.state.text.length < 50){
+        setMessage()
+      }else{
+          this.setState({text: "message too long. please keep messages under 50 characters"})
+          setTimeout(() => this.setState({text: ""}), 2000)
+        }
+      }
+
+    const setMessage = async () => {
+      // e.preventDefault()
       const strongParams = {
         message: {
           content: this.state.text,
@@ -47,8 +58,8 @@ export class Messages extends Component {
           throw new Error(`HTTP error! status: ${resp.status}`)
         }
       }
-       catch (e) {
-        console.log(e)
+       catch (error) {
+        console.log(error)
       }
     }
 
@@ -66,9 +77,9 @@ export class Messages extends Component {
 
       <div>
       <h3 style={{color: 'pink'}}>{this.state.text}</h3>
-      <form onSubmit={setMessage}>
+      <form onSubmit={approveMessage}>
         <input type="text" value={this.state.text} onChange={handleChange}></input>
-        <button type="submit" className="button" onClick={setMessage}>send message</button>
+        <button type="submit" className="button" onClick={approveMessage}>send message</button>
       </form>
     </div>
 
