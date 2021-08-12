@@ -21,23 +21,25 @@ componentDidMount(){
 
 
   render(){
+
+    const currentUserId = this.props.currentUser.id
     // console.log(this.props.user.id)
   return (
     <div className="App">
      
       <Router>
 
-        <Nav cool={this.props.currentUser.id}/>
+        <Nav cool={currentUserId}/>
 
         <Switch>
           <Route exact path="/" component={Home} /> 
           <Route exact path="/characters" component={AllCharacters} />
           <Route exact path={generatePath("/messages")}
-            render={() =>(<Messages userId={this.props.currentUser.id}/>)}/>
+            render={() =>(<Messages userId={currentUserId}/>)}/>
           <Route exact path={generatePath("/user/:id/characters", {
             id: this.props.currentUser.id,
           })} 
-          render={() =>(<UserCharacters cool={this.props.currentUser.id} />)}
+          render={() =>(<UserCharacters cool={currentUserId} />)}
            />
 
           <Route component={Oops} />
