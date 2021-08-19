@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import Body from './character/Body'
-import { getUserState, getUsersWithCharacters } from '../actions'
+import { getUserState } from '../actions'
 import { connect } from 'react-redux'
 
 class CharacterCreator extends Component {
@@ -84,16 +84,7 @@ handleName = async (e) => {
       method: "POST"
   })
   .then(response => response.json())
-  .then(character => this.setState({
-    characterName: character.name,
-    hairIndex: character.hairIndex,
-    eyesIndex: character.eyesIndex,
-    mouthIndex: character.mouthIndex,
-    shirtIndex: character.shirtIndex,
-    pantsIndex: character.pantsIndex,
-    shoesIndex: character.shoesIndex,
-    skinTone: character.skinTone,
-    redirect: true
+  .then(this.setState({redirect: true
   }))
   }
 
