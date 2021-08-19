@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { setUser, editUser, getUserState } from '../../actions';
+import { connect } from 'react-redux'
+import { setUser, editUser, getUserState } from '../../actions'
+import { Link } from 'react-router-dom'
 
 class NameForm extends Component {
   // constructor(props) {

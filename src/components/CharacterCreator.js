@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router'
 import Body from './character/Body'
-
+import { getUserState, getUsersWithCharacters } from '../actions'
+import { connect } from 'react-redux'
 
 class CharacterCreator extends Component {
 
@@ -13,7 +14,8 @@ class CharacterCreator extends Component {
     shirtIndex: 0,
     pantsIndex: 0,
     shoesIndex: 0,
-    skinTone: "",
+    skinTone: 0,
+    userId: "",
     redirect: false
   }
 
@@ -49,10 +51,11 @@ handleChange = (e) => {
 
 
 
-handleName = (e) => {
+handleName = async (e) => {
   e.preventDefault()
   document.getElementById('h4').innerText = this.state.characterName
-  this.setState({characterName: this.state.characterName})
+  await getUserState()
+  this.setState({characterName: this.state.characterName, userId: this.props.currentUser.id})
   console.log(this.state)
 }
 
@@ -68,7 +71,8 @@ handleName = (e) => {
           shirtIndex: this.state.shirtIndex,
           pantsIndex: this.state.pantsIndex,
           shoesIndex: this.state.shoesIndex,
-          skinTone: this.state.skinTone 
+          skinTone: this.state.skinTone,
+          user_id: this.state.userId
       }
   }
   fetch("http://localhost:3001/characters", {
@@ -161,4 +165,11 @@ render() {
   }
 }
 
-export default CharacterCreator
+const mapcurrentUserToProps = currentUser => {
+  return {
+    currentUser: currentUser.user
+  }
+}
+
+export default connect(mapcurrentUserToProps, { getUserState })(CharacterCreator)
+// export default CharacterCreator

@@ -32,7 +32,8 @@ componentDidMount(){
         <Nav cool={currentUserId}/>
 
         <Switch>
-          <Route exact path="/" component={Home} /> 
+          <Route exact path={generatePath("/")}
+            render={() => (<Home userId={currentUserId}/>)}/> 
           <Route exact path="/characters" component={AllCharacters} />
           <Route exact path={generatePath("/messages")}
             render={() =>(<Messages userId={currentUserId}/>)}/>
