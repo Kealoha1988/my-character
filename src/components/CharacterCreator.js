@@ -51,10 +51,10 @@ handleChange = (e) => {
 
 
 
-handleName = async (e) => {
+handleName = (e) => {
   e.preventDefault()
   document.getElementById('h4').innerText = this.state.characterName
-  await getUserState()
+  getUserState()
   this.setState({characterName: this.state.characterName, userId: this.props.currentUser.id})
   console.log(this.state)
 }
