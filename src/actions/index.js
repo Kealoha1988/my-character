@@ -1,5 +1,5 @@
 
-const baseURL = "http://localhost:3001/"
+export const baseURL = "https://my-character-api.herokuapp.com/"
 
 
 export const setUser = userName => {

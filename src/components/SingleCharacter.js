@@ -1,6 +1,7 @@
  import React, {useState} from 'react'
  import Body from "./character/Body";
- import { Redirect } from 'react-router';
+ import { Redirect } from 'react-router'
+ import { baseURL } from '../actions'
 
  
  export default function SingleCharacter(props) {
@@ -8,6 +9,7 @@
   const [redirect, makeRedirect] = useState(false)
   const [number, setNumber] = useState(props.likes)
   const [liked, setLiked] = useState(false)
+
 
 
   const   attributes = {
@@ -30,7 +32,7 @@
 
   const handleDelete = e => {
     e.preventDefault()
-    fetch("http://localhost:3001/characters/" + `${props.id.toString()}`, {
+    fetch(`${baseURL}/characters/` + `${props.id.toString()}`, {
       method: "DELETE"
     })
     makeRedirect(() => !redirect)
@@ -51,7 +53,7 @@
           likes: number + 1, 
       }
   }
-    const fetchLikes = await fetch(`http://localhost:3001/characters/${props.id}`, {
+    const fetchLikes = await fetch(`${baseURL}/characters/${props.id}`, {
       headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"

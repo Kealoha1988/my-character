@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setUser, editUser, getUserState } from '../../actions'
+import { setUser, editUser, getUserState, baseURL } from '../../actions'
 
 
 class NameForm extends Component {
@@ -36,7 +36,7 @@ class NameForm extends Component {
   
   handleDelete = e => {
     e.preventDefault()
-    fetch(`http://localhost:3001/users/${this.props.currentUser.id}`, {
+    fetch(`${baseURL}/users/${this.props.currentUser.id}`, {
       method: "DELETE"
       })
       window.location.reload()

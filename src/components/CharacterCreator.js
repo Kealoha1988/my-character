@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import Body from './character/Body'
-import { getUserState } from '../actions'
+import { getUserState, baseURL } from '../actions'
 import { connect } from 'react-redux'
 
 class CharacterCreator extends Component {
@@ -75,7 +75,7 @@ handleName = (e) => {
           user_id: this.state.userId
       }
   }
-  fetch("http://localhost:3001/characters", {
+  fetch(`${baseURL}/characters`, {
       headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"

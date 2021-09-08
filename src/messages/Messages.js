@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MessageTemplate from './MessageTemplate'
 import { connect } from 'react-redux'
-import {getMessages} from '../actions'
+import {getMessages, baseURL} from '../actions'
 
 
 
@@ -42,7 +42,7 @@ export class Messages extends Component {
         }
       }
       try {
-        const resp = await fetch("http://localhost:3001/messages", {
+        const resp = await fetch(`${baseURL}/messages`, {
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
