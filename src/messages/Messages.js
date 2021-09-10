@@ -25,16 +25,15 @@ export class Messages extends Component {
     const approveMessage = (e) => {
       e.preventDefault()
       console.log(this.state.text.length)
-      if (this.state.text.length >= 1 && this.state.text.length <= 50){
-        setMessage()
+      if (this.state.text.length == ""){
+        this.setState({text: "please write someting"})
+        setTimeout(() => this.setState({text: ""}), 2000)
       }
       else if (this.state.text.length > 50){
           this.setState({text: "message too long. please keep messages under 50 characters"})
           setTimeout(() => this.setState({text: ""}), 2000)
-        }
-        else if (this.state.text.length < 1)
-        {this.setState({text: "please write someting"})
-        setTimeout(() => this.setState({text: ""}), 2000)
+        }else{
+          setMessage()
       }
     }
 
