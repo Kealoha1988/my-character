@@ -6,6 +6,14 @@ export default function Nav(props) {
 
   const [music, setMusic] = useState(true)
 
+  const toggleMusic = () => {
+    if (music == true ){
+      return "music off"
+    }else{
+      return "music on"
+    }
+  } 
+
 
   const routerTrick = () => `/user/${props.cool}/characters`
 
