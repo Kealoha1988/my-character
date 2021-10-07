@@ -35,7 +35,7 @@ export default function Nav(props) {
           <div className="navButtons">
           <Link to='/'><button className="navButton-style">home</button></Link>
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
-          <button>music</button>
+          <button>{toggleMusic()}</button>
           </div>
           <div className="myCharacterButton">
           {userSignedIn()}
