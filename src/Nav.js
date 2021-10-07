@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export default function Nav(props) {
 
+  const [music, setMusic] = useState(true)
 
 
   const routerTrick = () => `/user/${props.cool}/characters`
