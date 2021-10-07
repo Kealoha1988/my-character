@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 
 export default function Nav(props) {
 
+
   const routerTrick = () => `/user/${props.cool}/characters`
 
   const userSignedIn = () => {
     if (props.cool !== "noUser"){
       return <>
       <Link to={routerTrick}><button className="navButton-style">my characters</button></Link>
-      <Link to='/messages'><button className="navButton-style">message feed</button></Link>
+      <Link to='/messages'><button className="navButton-style">messages</button></Link>
       </>
     }
   }
@@ -23,6 +24,7 @@ export default function Nav(props) {
           <div className="navButtons">
           <Link to='/'><button className="navButton-style">home</button></Link>
           <Link to='/characters'><button className="navButton-style">all characters</button></Link>
+          <button>music</button>
           </div>
           <div className="myCharacterButton">
           {userSignedIn()}
