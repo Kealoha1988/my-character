@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Nav(props) {
+
 
 
   const routerTrick = () => `/user/${props.cool}/characters`
